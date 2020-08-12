@@ -1,0 +1,122 @@
+//android相关配置
+ext.comSdk = 29
+ext.minSdk = 21
+ext.tarSdk = 29
+ext.verCode = 1
+ext.verName = "1.0"
+
+//仓库配置
+static def addReps(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.mavenCentral()
+    handler.maven { url 'https://jitpack.io' }
+}
+
+ext.addReps = this.&addReps
+
+//依赖版本号
+def ver = [:]
+ver.androidGradle = "3.6.3"
+ver.junit = "4.12"
+ver.testExt = "1.1.1"
+ver.testEspresso = "3.2.0"
+ver.constraintlayout = "1.1.3"
+ver.ktVersion = "1.3.61"
+ver.coreKtx = "1.3.0"
+ver.ktCoroutineAndroid = "1.3.0"
+ver.appcompat = "1.2.0-alpha02"
+ver.lifecycleKtx = "2.2.0"
+ver.retrofit = "2.6.0"
+ver.baseRecyclerViewAdapterHelper = "3.0.4"
+ver.interceptor = "3.9.0"
+ver.glide = "4.11.0"
+ver.permissionx = "1.2.2"
+ver.refresh = "2.0.1"
+ver.arouter_api = "1.5.0"
+ver.arouter_compiler = "1.2.2"
+ver.arouter_register = "1.0.2"
+ver.navigation = "2.3.0"
+ver.convenientbanner = "2.1.5"
+ext.ver = ver
+
+//插件
+def plugin = [:]
+plugin.androidGradle = "com.android.tools.build:gradle:$ver.androidGradle"
+plugin.kt = "org.jetbrains.kotlin:kotlin-gradle-plugin:$ver.ktVersion"
+ext.plugin = plugin
+
+//junit
+ext.junit = "junit:junit:$ver.junit"
+
+//androidx开头
+def androidx = [:]
+androidx.testExt = "androidx.test.ext:junit:$ver.testExt"
+androidx.testEspresso = "androidx.test.espresso:espresso-core:$ver.testEspresso"
+androidx.appcompat = "androidx.appcompat:appcompat:$ver.appcompat"
+androidx.recyclerview = "androidx.recyclerview:recyclerview:$ver.appcompat"
+androidx.constraintlayout = "androidx.constraintlayout:constraintlayout:$ver.constraintlayout"
+androidx.coreKtx = "androidx.core:core-ktx:$ver.coreKtx"
+androidx.lifecycleKtxRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$ver.lifecycleKtx"
+androidx.lifecycleKtxLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:$ver.lifecycleKtx"
+androidx.lifecycleKtxViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$ver.lifecycleKtx"
+// Kotlin
+androidx.navigation_frag = "androidx.navigation:navigation-fragment-ktx:$ver.navigation"
+androidx.navigation_ui = "androidx.navigation:navigation-ui-ktx:$ver.navigation"
+androidx.navigation_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$ver.navigation"
+ext.androidx = androidx
+
+//google
+def google = [:]
+google.material = "com.google.android.material:material:$ver.appcompat"
+ext.google = google
+
+//square开头
+def squareup = [:]
+squareup.retrofit = "com.squareup.retrofit2:retrofit:$ver.retrofit"
+squareup.converterGson = "com.squareup.retrofit2:converter-gson:$ver.retrofit"
+squareup.scalars = "com.squareup.retrofit2:converter-scalars:$ver.retrofit"
+squareup.interceptor = "com.squareup.okhttp3:logging-interceptor:$ver.interceptor"
+ext.squareup = squareup
+
+//jetbrains
+def jetbrains = [:]
+jetbrains.ktStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$ver.ktVersion"
+jetbrains.ktReflect = "org.jetbrains.kotlin:kotlin-reflect:$ver.ktVersion"
+jetbrains.ktCoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$ver.ktCoroutineAndroid"
+ext.jetbrains = jetbrains
+
+//github开头
+def github = [:]
+github.baseRecyclerViewAdapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:$ver.baseRecyclerViewAdapterHelper"
+github.glide = "com.github.bumptech.glide:glide:$ver.glide"
+github.glideCompiler = "com.github.bumptech.glide:compiler:$ver.glide"
+ext.github = github
+
+//permissionx
+ext.permissionx = "com.permissionx.guolindev:permissionx:$ver.permissionx"
+
+//refresh
+def refresh = [:]
+refresh.layout = "com.scwang.smart:refresh-layout-kernel:$ver.refresh"
+refresh.headerClassic = "com.scwang.smart:refresh-header-classics:$ver.refresh"
+refresh.headerMaterial = "com.scwang.smart:refresh-header-material:$ver.refresh"
+refresh.footerClassic = "com.scwang.smart:refresh-footer-classics:$ver.refresh"
+ext.refresh = refresh
+
+//骨架屏
+ext.skeleton = "com.ethanhua:skeleton:1.1.2"
+ext.shimmerlayout = "io.supercharge:shimmerlayout:2.1.0"
+
+//alibaba开头
+def alibaba = [:]
+alibaba.arouter_api = "com.alibaba:arouter-api:$ver.arouter_api"
+alibaba.arouter_compiler = "com.alibaba:arouter-compiler:$ver.arouter_compiler"
+alibaba.arouter_register = "com.alibaba:arouter-register:$ver.arouter_register"
+ext.alibaba = alibaba
+
+//轮播 banner
+ext.convenientbanner = "com.bigkoo:convenientbanner:$ver.convenientbanner"
+
+//适配框架
+ext.autosize="me.jessyan:autosize:1.2.1"

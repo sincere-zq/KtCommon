@@ -1,0 +1,18 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply from: "dep.gradle"
+    addReps(repositories)
+    dependencies {
+        classpath plugin.kt
+        classpath plugin.androidGradle
+    }
+}
+
+allprojects {
+    addReps(repositories)
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
