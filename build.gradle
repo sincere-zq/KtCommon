@@ -6,6 +6,7 @@ buildscript {
     dependencies {
         classpath plugin.kt
         classpath plugin.androidGradle
+        classpath plugin.greendao
     }
 }
 

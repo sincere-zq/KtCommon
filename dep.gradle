@@ -38,12 +38,20 @@ ver.arouter_compiler = "1.2.2"
 ver.arouter_register = "1.0.2"
 ver.navigation = "2.3.0"
 ver.convenientbanner = "2.1.5"
+ver.greendao = "3.2.0"
+ver.greendao_plugin = "3.2.2"
+ver.apache_commons = "3.5"
+ver.eventbus = "3.0.0"
+ver.netty = "5.0.0.Alpha2"
+ver.ijkplayer = "0.8.3"
+ver.websocket = "1.4.0"
 ext.ver = ver
 
 //插件
 def plugin = [:]
 plugin.androidGradle = "com.android.tools.build:gradle:$ver.androidGradle"
 plugin.kt = "org.jetbrains.kotlin:kotlin-gradle-plugin:$ver.ktVersion"
+plugin.greendao = "org.greenrobot:greendao-gradle-plugin:$ver.greendao_plugin"
 ext.plugin = plugin
 
 //junit
@@ -108,15 +116,38 @@ ext.refresh = refresh
 ext.skeleton = "com.ethanhua:skeleton:1.1.2"
 ext.shimmerlayout = "io.supercharge:shimmerlayout:2.1.0"
 
+//GreenDao
+def database = [:]
+database.greendao_api = "org.greenrobot:greendao:$ver.greendao"
+database.greendao_generator = "org.greenrobot:greendao-generator:$ver.greendao"
+ext.database = database
+
 //alibaba开头
 def alibaba = [:]
 alibaba.arouter_api = "com.alibaba:arouter-api:$ver.arouter_api"
 alibaba.arouter_compiler = "com.alibaba:arouter-compiler:$ver.arouter_compiler"
 alibaba.arouter_register = "com.alibaba:arouter-register:$ver.arouter_register"
+alibaba.greendao_api = "org.greenrobot:greendao:$ver.greendao"
+alibaba.greendao_generator = "org.greenrobot:greendao-generator:$ver.greendao"
 ext.alibaba = alibaba
 
 //轮播 banner
 ext.convenientbanner = "com.bigkoo:convenientbanner:$ver.convenientbanner"
 
 //适配框架
-ext.autosize="me.jessyan:autosize:1.2.1"
+ext.autosize = "me.jessyan:autosize:1.2.1"
+
+//apache_commons
+ext.apache_commons = "org.apache.commons:commons-lang3:$ver.apache_commons"
+
+//eventbus依赖
+ext.eventbus = "org.greenrobot:eventbus:$ver.eventbus"
+
+//netty
+ext.netty = "io.netty:netty-all:$ver.netty"
+
+//ijkplayer
+ext.ijkplayer = "tv.danmaku.ijk.media:ijkplayer-java:$ver.ijkplayer"
+
+//WebSocket
+ext.websocket = "org.java-websocket:Java-WebSocket:$ver.websocket"

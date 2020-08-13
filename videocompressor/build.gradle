@@ -25,7 +25,7 @@ dependencies {
     androidTestImplementation androidx.testExt
     androidTestImplementation androidx.testEspresso
 
-    api androidx.appcompat
-    compile files('libs/isoparser-1.0.6.jar')
-    compile files('libs/aspectjrt-1.7.3.jar')
+    implementation androidx.appcompat
+    api files('libs/isoparser-1.0.6.jar')
+    api files('libs/aspectjrt-1.7.3.jar')
 }
