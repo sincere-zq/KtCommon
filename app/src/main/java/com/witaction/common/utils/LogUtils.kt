@@ -67,7 +67,7 @@ fun getContent(trace: StackTraceElement): String {
  * @param tag
  * @param msg
  */
-fun d(tag: String?, msg: String, tr: Throwable?) {
+fun logd(tag: String?, msg: String, tr: Throwable?) {
     if (isLogEnabled) {
         Log.d(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg, tr)
     }
@@ -90,7 +90,7 @@ fun d(tag: String?, msg: String) {
  *
  * @param msg
  */
-fun d(msg: String) {
+fun logd(msg: String) {
     if (isLogEnabled) {
         Log.d(defaultTag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -102,7 +102,7 @@ fun d(msg: String) {
  * @param tag
  * @param msg
  */
-fun e(tag: String?, msg: String, tr: Throwable?) {
+fun loge(tag: String?, msg: String, tr: Throwable?) {
     if (isLogEnabled) {
         Log.e(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg, tr)
     }
@@ -114,7 +114,7 @@ fun e(tag: String?, msg: String, tr: Throwable?) {
  * @param tag
  * @param msg
  */
-fun e(tag: String?, msg: String) {
+fun loge(tag: String?, msg: String) {
     if (isLogEnabled) {
         Log.e(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -125,7 +125,7 @@ fun e(tag: String?, msg: String) {
  *
  * @param msg
  */
-fun e(msg: String) {
+fun loge(msg: String) {
     if (isLogEnabled) {
         Log.e(defaultTag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -137,7 +137,7 @@ fun e(msg: String) {
  * @param tag
  * @param msg
  */
-fun i(tag: String?, msg: String, tr: Throwable?) {
+fun logi(tag: String?, msg: String, tr: Throwable?) {
     if (isLogEnabled) {
         Log.i(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg, tr)
     }
@@ -149,7 +149,7 @@ fun i(tag: String?, msg: String, tr: Throwable?) {
  * @param tag
  * @param msg
  */
-fun i(tag: String?, msg: String) {
+fun logi(tag: String?, msg: String) {
     if (isLogEnabled) {
         Log.i(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -160,7 +160,7 @@ fun i(tag: String?, msg: String) {
  *
  * @param msg
  */
-fun i(msg: String) {
+fun logi(msg: String) {
     if (isLogEnabled) {
         Log.i(defaultTag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -172,7 +172,7 @@ fun i(msg: String) {
  * @param tag
  * @param msg
  */
-fun v(tag: String?, msg: String, tr: Throwable?) {
+fun logv(tag: String?, msg: String, tr: Throwable?) {
     if (isLogEnabled) {
         Log.v(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg, tr)
     }
@@ -184,7 +184,7 @@ fun v(tag: String?, msg: String, tr: Throwable?) {
  * @param tag
  * @param msg
  */
-fun v(tag: String?, msg: String) {
+fun logv(tag: String?, msg: String) {
     if (isLogEnabled) {
         Log.v(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -195,7 +195,7 @@ fun v(tag: String?, msg: String) {
  *
  * @param msg
  */
-fun v(msg: String) {
+fun logv(msg: String) {
     if (isLogEnabled) {
         Log.v(defaultTag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -207,7 +207,7 @@ fun v(msg: String) {
  * @param tag
  * @param msg
  */
-fun w(tag: String?, msg: String, tr: Throwable?) {
+fun logw(tag: String?, msg: String, tr: Throwable?) {
     if (isLogEnabled) {
         Log.w(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg, tr)
     }
@@ -219,7 +219,7 @@ fun w(tag: String?, msg: String, tr: Throwable?) {
  * @param tag
  * @param msg
  */
-fun w(tag: String?, msg: String) {
+fun logw(tag: String?, msg: String) {
     if (isLogEnabled) {
         Log.w(tag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }
@@ -230,7 +230,7 @@ fun w(tag: String?, msg: String) {
  *
  * @param msg
  */
-fun w(msg: String) {
+fun logw(msg: String) {
     if (isLogEnabled) {
         Log.w(defaultTag, getContent(getCurrentStackTraceElement()) + "--->" + msg)
     }

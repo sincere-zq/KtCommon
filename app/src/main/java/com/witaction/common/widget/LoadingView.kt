@@ -20,13 +20,9 @@ class LoadingView : FrameLayout {
 
     private val binding: ViewLoadingBinding =
         ViewLoadingBinding.inflate(LayoutInflater.from(context), this, true)
-    private var refreshClickListener: ReFreshClickListener? = null
 
     init {
         start()
-        setOnClickListener {
-            refreshClickListener?.clickToRefresh()
-        }
     }
 
     /**
@@ -52,16 +48,12 @@ class LoadingView : FrameLayout {
     /**
      * 显示错误信息
      */
-    fun error(msg: String?, errorImgResourse: Int) {
+    fun error(msg: String?, errorImgResourse: Int, block: View.() -> Unit) {
         if (visibility == View.GONE) {
             visibility = View.VISIBLE
         }
         binding.imgLoading.setBackgroundResource(errorImgResourse)
         binding.tvLoading.text = msg
-    }
-
-
-    interface ReFreshClickListener {
-        fun clickToRefresh()
+        setOnClickListener { block() }
     }
 }

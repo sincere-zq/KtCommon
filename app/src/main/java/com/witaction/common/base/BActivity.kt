@@ -6,14 +6,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Lifecycle
 import androidx.viewbinding.ViewBinding
+import com.witaction.common.widget.LoadingDialog
 
 /**
  * Activity基类
  */
 abstract class BActivity<VB : ViewBinding> : AppCompatActivity(), IActivity<VB> {
+    private val loadingDialog by lazy { LoadingDialog(this) }
     protected lateinit var vb: VB
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppManager.getInstance().addActivity(this)
         vb = viewbinding()
         setContentView(vb.root)
         initView()
@@ -38,5 +41,37 @@ abstract class BActivity<VB : ViewBinding> : AppCompatActivity(), IActivity<VB> 
         transaction.commitAllowingStateLoss()
         sfm.executePendingTransactions()
         return fragment as T
+    }
+
+    protected fun showLoading() {
+        if (!loadingDialog.isShowing) {
+            loadingDialog.setCanceledOnTouchOutside(false)
+            loadingDialog.show()
+        }
+    }
+
+    protected fun hideLoading() {
+        loadingDialog.let {
+            if (it.isShowing) {
+                it.dismiss()
+            }
+        }
+    }
+
+    override fun onStop() {
+        hideLoading()
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        AppManager.getInstance().remove(this)
+    }
+
+    override fun finish() {
+        super.finish()
+        if (AppManager.getInstance().activityNumber() > 1) {
+            overridePendingTransition(0, android.R.anim.slide_out_right)
+        }
     }
 }

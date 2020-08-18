@@ -45,6 +45,7 @@ ver.eventbus = "3.0.0"
 ver.netty = "5.0.0.Alpha2"
 ver.ijkplayer = "0.8.3"
 ver.websocket = "1.4.0"
+ver.gsy = "7.1.5"
 ext.ver = ver
 
 //插件
@@ -151,3 +152,16 @@ ext.ijkplayer = "tv.danmaku.ijk.media:ijkplayer-java:$ver.ijkplayer"
 
 //WebSocket
 ext.websocket = "org.java-websocket:Java-WebSocket:$ver.websocket"
+
+//圆形ImageView
+ext.circleimageview = "de.hdodenhof:circleimageview:3.1.0"
+
+//banner
+ext.banner = "com.github.zhpanvip:BannerViewPager:3.1.2"
+
+//gsyplayer
+def gsy = [:]
+gsy.player = "com.shuyu:gsyVideoPlayer-java:$ver.gsy"
+gsy.armv7a = "com.shuyu:gsyVideoPlayer-armv7a:$ver.gsy"
+gsy.arm64 = "com.shuyu:gsyVideoPlayer-arm64:$ver.gsy"
+ext.gsy = gsy

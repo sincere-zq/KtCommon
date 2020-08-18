@@ -1,4 +1,4 @@
-package com.witaction.common.base
+package com.witaction.common.extension
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

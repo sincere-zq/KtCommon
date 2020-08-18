@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.witaction.common.widget.LoadingDialog
 
 /**
  * Fragment基类
  */
 abstract class BFragment<VB : ViewBinding> : Fragment(), IFragment<VB> {
+    private val loadingDialog by lazy { LoadingDialog(activity!!) }
     protected lateinit var vb: VB
     private var hasLoaded = false
 
@@ -33,8 +35,23 @@ abstract class BFragment<VB : ViewBinding> : Fragment(), IFragment<VB> {
     }
 
     override fun onDestroyView() {
+        hideLoading()
         super.onDestroyView()
         hasLoaded = false
     }
 
+    protected fun showLoading() {
+        if (!loadingDialog.isShowing) {
+            loadingDialog.setCanceledOnTouchOutside(false)
+            loadingDialog.show()
+        }
+    }
+
+    protected fun hideLoading() {
+        loadingDialog.let {
+            if (it.isShowing) {
+                it.dismiss()
+            }
+        }
+    }
 }

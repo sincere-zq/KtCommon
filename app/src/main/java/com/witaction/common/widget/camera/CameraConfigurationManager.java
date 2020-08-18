@@ -408,7 +408,7 @@ final class CameraConfigurationManager {
                 }, null, new PictureCallback() {
                     @Override
                     public void onPictureTaken(byte[] data, Camera camera) {
-                        Camera.Size size = camera.getParameters().getPreviewSize();
+                        Size size = camera.getParameters().getPreviewSize();
                         int width = size.width;
                         int height = size.height;
                         callback.onCapture(data, width, height);

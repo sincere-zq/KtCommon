@@ -12,17 +12,17 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout
  */
 class BApp : Application() {
     companion object {
-        init {
-            SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, _ ->
-                MaterialHeader(context)
-            }
-            SmartRefreshLayout.setDefaultRefreshFooterCreator { context, _ ->
-                ClassicsFooter(context)
-            }
-        }
-
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
+    }
+
+    init {
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, _ ->
+            MaterialHeader(context)
+        }
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, _ ->
+            ClassicsFooter(context)
+        }
     }
 
     override fun onCreate() {

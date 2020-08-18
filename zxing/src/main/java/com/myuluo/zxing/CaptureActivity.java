@@ -20,7 +20,6 @@ import com.google.zxing.Result;
 import com.google.zxing.client.result.ResultParser;
 import com.myuluo.zxing.camera.CameraManager;
 import com.myuluo.zxing.decode.CaptureActivityHandler;
-import com.myuluo.zxing.util.CountDownUtil;
 import com.myuluo.zxing.view.ViewfinderView;
 
 import java.io.IOException;
@@ -40,10 +39,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     public static final int FROM_REQUEST_CODE = 0x124;
     //结果码
     public static final int FROM_RESULT_CODE = 0x125;
-    //页面存在时间
-    private static final long SCAN_TIME = 60 * 1000;
-
-    private CountDownUtil mCountDownUtil;
 
     public static void launchForResult(Activity activity) {
         activity.startActivityForResult(new Intent(activity, CaptureActivity.class), FROM_REQUEST_CODE);
@@ -111,7 +106,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         findViewById(R.id.capture_flashlight).setOnClickListener(this);
         // 取消扫描
         findViewById(R.id.capture_button_cancel).setOnClickListener(this);
-        countDown(SCAN_TIME, 1000);
     }
 
     // 恢复Activity时被回调。在onStart()方法后一定会回调onResume()方法
@@ -160,9 +154,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
             handler = null;
         }
         cameraManager.closeDriver();
-        if (mCountDownUtil != null) {
-            mCountDownUtil.cancel();
-        }
     }
 
     @Override
@@ -293,31 +284,5 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         if (id == R.id.capture_button_cancel) {
             finish();
         }
-    }
-
-    /**
-     * 开始倒计时,传入总时间和每一秒要倒计时的时间
-     */
-    private void countDown(final long millisInFuture, long countDownInterval) {
-        mCountDownUtil = CountDownUtil.getCountDownTimer()
-                // 倒计时总时间
-                .setMillisInFuture(millisInFuture)
-                // 每隔多久回调一次onTick
-                .setCountDownInterval(countDownInterval)
-                // 每回调一次onTick执行
-                .setTickDelegate(new CountDownUtil.TickDelegate() {
-                    @Override
-                    public void onTick(long pMillisUntilFinished) {
-                    }
-                })
-                // 结束倒计时执行
-                .setFinishDelegate(new CountDownUtil.FinishDelegate() {
-                    @Override
-                    public void onFinish() {
-                        Log.e("倒计时", "倒计时结束");
-                        finish();
-                    }
-                });
-        mCountDownUtil.start();
     }
 }

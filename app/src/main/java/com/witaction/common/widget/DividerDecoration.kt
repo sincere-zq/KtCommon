@@ -1,4 +1,4 @@
-package com.witaction.common.utils
+package com.witaction.common.widget
 
 import android.content.Context
 import android.graphics.Canvas
