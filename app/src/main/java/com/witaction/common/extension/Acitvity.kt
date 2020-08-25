@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 
-fun Activity.open(pClass: Class<*>?, pBundle: Bundle? = null) {
-    val intent = Intent(this, pClass)
+inline fun <reified T : Activity> Activity.open(pBundle: Bundle? = null) {
+    val intent = Intent(this, T::class.java)
     if (pBundle != null) {
         intent.putExtras(pBundle)
     }
@@ -13,8 +13,8 @@ fun Activity.open(pClass: Class<*>?, pBundle: Bundle? = null) {
     overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
 }
 
-fun Activity.open(pClass: Class<*>?, pBundle: Bundle? = null, requestCode: Int) {
-    val intent = Intent(this, pClass)
+inline fun <reified T : Activity> Activity.open(pBundle: Bundle? = null, requestCode: Int) {
+    val intent = Intent(this, T::class.java)
     if (pBundle != null) {
         intent.putExtras(pBundle)
     }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.viewbinding.ViewBinding
 import com.witaction.common.widget.LoadingDialog
 
@@ -53,5 +54,25 @@ abstract class BFragment<VB : ViewBinding> : Fragment(), IFragment<VB> {
                 it.dismiss()
             }
         }
+    }
+
+    inline fun <reified T : Fragment> Fragment.showFragment(replaceViewId: Int): T {
+        val sfm = childFragmentManager
+        val transaction = sfm.beginTransaction()
+        var fragment = sfm.findFragmentByTag(T::class.java.name)
+        if (fragment == null) {
+            fragment = T::class.java.newInstance()
+            transaction.add(replaceViewId, fragment, T::class.java.name)
+        }
+        sfm.fragments.filter { it != fragment }
+            .forEach {
+                transaction.hide(it)
+                transaction.setMaxLifecycle(it, Lifecycle.State.STARTED)
+            }
+        transaction.show(fragment)
+        transaction.setMaxLifecycle(fragment, Lifecycle.State.RESUMED)
+        transaction.commitAllowingStateLoss()
+        sfm.executePendingTransactions()
+        return fragment as T
     }
 }
