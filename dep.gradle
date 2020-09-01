@@ -46,6 +46,7 @@ ver.netty = "5.0.0.Alpha2"
 ver.ijkplayer = "0.8.3"
 ver.websocket = "1.4.0"
 ver.gsy = "7.1.5"
+ver.immersionbar = "3.0.0"
 ext.ver = ver
 
 //插件
@@ -165,3 +166,6 @@ gsy.player = "com.shuyu:gsyVideoPlayer-java:$ver.gsy"
 gsy.armv7a = "com.shuyu:gsyVideoPlayer-armv7a:$ver.gsy"
 gsy.arm64 = "com.shuyu:gsyVideoPlayer-arm64:$ver.gsy"
 ext.gsy = gsy
+
+//immersionbar
+ext.immersionbar = "com.gyf.immersionbar:immersionbar:$ver.immersionbar"

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //左边图片 中间文字 右边两张图片导航栏自定义属性
+    <declare-styleable name="HeaderView">
+        <attr name="Background" format="color|reference" />
+
+        <attr name="LeftImage" format="reference" />
+        <attr name="LeftImage_Show" format="boolean" />
+        <attr name="RightImage" format="reference" />
+        <attr name="RightImage_Show" format="boolean" />
+        <attr name="RightSecondImage" format="reference" />
+        <attr name="RightSecondImage_Show" format="boolean" />
+
+        <attr name="Title_Show" format="boolean" />
+        <attr name="Title" format="string" />
+        <attr name="TitleColor" format="color" />
+        <attr name="TitleSize" format="dimension" />
+
+        <attr name="Sub_Title_Show" format="boolean" />
+        <attr name="Sub_Title" format="string" />
+        <attr name="Sub_TitleColor" format="color" />
+        <attr name="Sub_TitleSize" format="dimension" />
+
+        <attr name="Right_Text_Show" format="boolean" />
+        <attr name="Right_Text" format="string" />
+        <attr name="Right_TextColor" format="color" />
+        <attr name="Right_TextSize" format="dimension" />
+
+        <attr name="ShowLineView" format="boolean" />
+    </declare-styleable>
+</resources>

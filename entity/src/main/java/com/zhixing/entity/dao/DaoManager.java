@@ -34,13 +34,13 @@ import com.zhixing.entity.PersonBean;
 import com.zhixing.entity.PersonBeanDao;
 import com.zhixing.entity.RecogeRecordBean;
 import com.zhixing.entity.RecogeRecordBeanDao;
-import com.zhixing.entity.config.FileConfig;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -72,7 +72,7 @@ public class DaoManager {
                     return null;
                 } else {// 如果存在
                     // 获取sd卡路径
-                    String dbDir = FileConfig.FILE_DATABASE;
+                    String dbDir = Objects.requireNonNull(getExternalFilesDir("Databases")).getAbsolutePath();
 
                     String dbPath = dbDir + File.separator + name;// 数据库路径
                     // 判断目录是否存在，不存在则创建该目录

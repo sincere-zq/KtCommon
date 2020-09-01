@@ -28,4 +28,5 @@ dependencies {
     //数据库greendao
     api database.greendao_api
     api database.greendao_generator
+    implementation squareup.converterGson
 }

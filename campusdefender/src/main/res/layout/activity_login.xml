@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.login.login.LoginActivity">
+
+    <com.witaction.common.widget.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:LeftImage_Show="false"
+        app:Right_Text="@string/login_by_account"
+        app:Right_TextColor="@color/rgb_616161"
+        app:Right_TextSize="@dimen/sp_16"
+        app:Right_Text_Show="true"
+        app:Sub_Title="@string/please_select_school"
+        app:Sub_Title_Show="true"
+        app:Title_Show="false" />
+
+    <View
+        style="@style/h_line"
+        android:layout_below="@id/header_view" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginTop="@dimen/dp_120"
+        android:layout_marginRight="@dimen/dp_14"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--账号密码登录-->
+            <LinearLayout
+                android:id="@+id/ll_login_by_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_by_account"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_30" />
+
+                <com.witaction.common.widget.ClearEditTextView
+                    android:id="@+id/et_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@null"
+                    android:hint="@string/please_input_account"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:textSize="@dimen/sp_20" />
+
+                <View style="@style/h_line" />
+
+                <com.witaction.common.widget.ClearEditTextView
+                    android:id="@+id/et_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@string/please_input_password"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:textSize="@dimen/sp_20" />
+
+                <View style="@style/h_line" />
+            </LinearLayout>
+            <!--验证码登录-->
+            <LinearLayout
+                android:id="@+id/ll_login_by_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_by_code"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_30" />
+
+                <com.witaction.common.widget.ClearEditTextView
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@null"
+                    android:hint="@string/please_input_phone"
+                    android:inputType="phone"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:textSize="@dimen/sp_20" />
+
+                <View style="@style/h_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <com.witaction.common.widget.ClearEditTextView
+                        android:id="@+id/et_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/please_input_code"
+                        android:inputType="number"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:textSize="@dimen/sp_20" />
+
+                    <TextView
+                        android:id="@+id/tv_get_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/get_code"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/sp_16" />
+                </LinearLayout>
+
+                <View style="@style/h_line" />
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_regist_mean_agree"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_user_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_02"
+                android:paddingRight="@dimen/dp_02"
+                android:text="@string/user_agreement"
+                android:textColor="@color/green"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/selector_login_btn"
+            android:enabled="false"
+            android:text="@string/agreement_and_login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20" />
+
+    </LinearLayout>
+
+</RelativeLayout>
