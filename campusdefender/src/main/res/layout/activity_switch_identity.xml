@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.my.switchidentity.SwitchIdentityActivity">
+
+    <com.witaction.common.widget.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:Right_Text="@string/complete"
+        app:Right_TextColor="@color/green"
+        app:Right_TextSize="@dimen/sp_16"
+        app:Right_Text_Show="true"
+        app:Title="@string/switch_identity" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_view"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rb_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_tacher"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:text="@string/i_am_teacher"
+            android:textColor="@drawable/selector_switch_identity_textcolor"
+            android:textSize="@dimen/sp_16" />
+
+        <RadioButton
+            android:id="@+id/rb_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_25"
+            android:background="@null"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_parent"
+            android:drawablePadding="8dp"
+            android:gravity="center_horizontal"
+            android:text="@string/i_am_parent"
+            android:textColor="@drawable/selector_switch_identity_textcolor"
+            android:textSize="@dimen/sp_16" />
+    </RadioGroup>
+
+</RelativeLayout>

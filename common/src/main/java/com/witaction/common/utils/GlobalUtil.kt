@@ -1,6 +1,7 @@
 package com.witaction.common.utils
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.ApplicationInfo
@@ -37,6 +38,19 @@ object GlobalUtil {
         GlobalUtil.appPackage + "_preferences",
         Context.MODE_PRIVATE
     )
+
+    /**
+     * 设置界面背景透明度0-1  主要用于POP弹出时 ,背景界面变色
+     *
+     * @param activity
+     * @param bgAlpha
+     */
+    fun backgroundAlpha(activity: Activity, bgAlpha: Float) {
+        val lp = activity.window.attributes
+        lp.alpha = bgAlpha //0.0-1.0
+        activity.window.attributes = lp
+    }
+
 
     /**
      * 获取当前应用程序的包名。
@@ -183,7 +197,7 @@ object GlobalUtil {
     /**
      * 获取资源文件drawable
      */
-    fun getDrawable(resId:Int):Drawable{
+    fun getDrawable(resId: Int): Drawable {
         return BApp.context.resources.getDrawable(resId)
     }
 
@@ -258,4 +272,11 @@ object GlobalUtil {
      * 判断手机是否安装了微博。
      * */
     fun isWeiboInstalled() = isInstalled("com.sina.weibo")
+
+    /**
+     * 获取图片名称获取图片的资源id的方法
+     */
+    fun getResourceByName(ctx: Context, imageName: String): Int {
+        return ctx.resources.getIdentifier(imageName, "mipmap", ctx.packageName)
+    }
 }

@@ -8,9 +8,8 @@ import com.eyepetizer.android.extension.gone
 import com.eyepetizer.android.extension.visible
 import com.witaction.campusdefender.R
 import com.witaction.campusdefender.databinding.ActivityLoginBinding
-import com.witaction.campusdefender.ui.LocalReponsitory
+import com.witaction.campusdefender.ui.ServiceLocalReponsitory
 import com.witaction.campusdefender.ui.ServiceReponsitory
-import com.witaction.campusdefender.ui.login.plat.PlatActivity
 import com.witaction.campusdefender.ui.main.MainActivity
 import com.witaction.common.base.BVMActivity
 import com.witaction.common.extension.afterTextChanged
@@ -19,6 +18,8 @@ import com.witaction.common.utils.CountDownUtil
 import com.witaction.common.utils.GlobalUtil
 import com.witaction.common.utils.toast
 import com.witaction.common.widget.HeaderView
+import com.witaction.plat.PlatLocalReponsitory
+import com.witaction.plat.ui.plat.PlatActivity
 
 /**
  * 登录页
@@ -122,8 +123,9 @@ class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
             if (it.isSuccess()) {
                 val user = it.getSimpleData()
                 user?.let { it1 ->
-                    it1.schoolId = LocalReponsitory.getPlat()?.sysID.toString()
-                    LocalReponsitory.saveUser(it1)
+                    it1.schoolId = PlatLocalReponsitory.getPlat()?.sysID.toString()
+                    it1.selectType = it1.type
+                    ServiceLocalReponsitory.saveUser(it1)
                     open<MainActivity>()
                     finish()
                 }
@@ -131,7 +133,7 @@ class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
                 toast(it.msg)
             }
         }
-        vm.plat.value = LocalReponsitory.getPlat()
+        vm.plat.value = PlatLocalReponsitory.getPlat()
     }
 
     /**
@@ -226,7 +228,7 @@ class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            vm.plat.value = LocalReponsitory.getPlat()
+            vm.plat.value = PlatLocalReponsitory.getPlat()
         }
     }
 

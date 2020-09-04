@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.viewbinding.ViewBinding
+import com.witaction.common.R
 import com.witaction.common.widget.LoadingDialog
+import org.greenrobot.eventbus.EventBus
 
 /**
  * Fragment基类
@@ -39,6 +41,11 @@ abstract class BFragment<VB : ViewBinding> : Fragment(), IFragment<VB> {
         hideLoading()
         super.onDestroyView()
         hasLoaded = false
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBus.getDefault().unregister(this)
     }
 
     protected fun showLoading() {
@@ -74,5 +81,24 @@ abstract class BFragment<VB : ViewBinding> : Fragment(), IFragment<VB> {
         transaction.commitAllowingStateLoss()
         sfm.executePendingTransactions()
         return fragment as T
+    }
+
+    protected fun getLoadingView(): View {
+        val view = LayoutInflater.from(activity).inflate(R.layout.view_layout_loading, null)
+        return view
+    }
+
+    protected fun getNetErrorView(reload: () -> Unit): View {
+        val view = LayoutInflater.from(activity).inflate(R.layout.view_net_error, null)
+        view.setOnClickListener {
+            reload()
+        }
+        return view
+    }
+
+    protected fun getEmptyView(reload: () -> Unit): View {
+        val view = LayoutInflater.from(activity).inflate(R.layout.view_empty_data, null)
+        view.setOnClickListener { reload() }
+        return view
     }
 }

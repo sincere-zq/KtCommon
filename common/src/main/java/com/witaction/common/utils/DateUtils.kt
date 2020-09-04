@@ -118,7 +118,7 @@ object DateUtils {
      *
      * @return
      */
-    fun getCurSystemDate(): String? {
+    fun getCurSystemDate(): String {
         val format = SimpleDateFormat(yyyy_MM_dd)
         val d1 = Date(System.currentTimeMillis())
         return format.format(d1)

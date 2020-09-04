@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">plat</string>
+    <string name="refused_permission">拒绝了权限</string>
+</resources>

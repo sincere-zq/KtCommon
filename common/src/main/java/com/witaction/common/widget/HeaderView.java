@@ -157,13 +157,17 @@ public class HeaderView extends RelativeLayout {
 
     }
 
+    public void setRightTextVisible(boolean visible) {
+        binding.tvHeaderRight.setVisibility(visible ? VISIBLE : GONE);
+    }
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int statubarHeight = ImmersionBar.getStatusBarHeight((Activity) getContext());
         setPadding(0, statubarHeight, 0, 0);
         int width = MeasureSpec.getSize(widthMeasureSpec);
-        setMeasuredDimension(width, GlobalUtil.INSTANCE.getDimension(R.dimen.dp_44) + statubarHeight);
+        setMeasuredDimension(width, GlobalUtil.INSTANCE.getDimension(R.dimen.dp_48) + statubarHeight);
     }
 
     public interface HeaderListener {

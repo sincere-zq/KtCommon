@@ -14,11 +14,16 @@
     <color name="grey">#666666</color>
     <color name="transparent">#00000000</color>
     <color name="bg_loading_dialog">#80000000</color>
+    <color name="circle_img_border">#30000000</color>
     <color name="rgb_e0e0e0">#e0e0e0</color>
     <color name="rgb_616161">#616161</color>
+    <color name="rgb_bdbdbd">#bdbdbd</color>
+
 
     <color name="blue">#39a1ff</color>
+    <color name="blue_low">#ecf3fe</color>
     <color name="orange">#ffc435</color>
+    <color name="orange_low">#fef5de</color>
     <color name="red">#fb6e52</color>
     <color name="green">#25bc85</color>
 </resources>

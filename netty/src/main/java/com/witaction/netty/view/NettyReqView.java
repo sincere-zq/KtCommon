@@ -1,9 +1,6 @@
 package com.witaction.netty.view;
 
 
-import com.zhixing.entity.RecogeRecordBean;
-import com.zhixing.entity.bean.RecogResult;
-
 import java.io.Serializable;
 
 /**
@@ -69,19 +66,4 @@ public interface NettyReqView extends Serializable {
      * 根据手机号或者员工编号查询特征存在情况
      */
     void sendStrCheckFeature(String searchText);
-
-    /**
-     * 在线识别包
-     */
-    void senOnlieIdentifyPacket(RecogResult task);
-
-    /**
-     * 前端识别 陌生人包
-     */
-    void sendFrontStrangerPacket(RecogResult task);
-
-    /**
-     * 上传离线识别记录
-     */
-    void sendOffIdentifyRecord(RecogeRecordBean recordBean);
 }

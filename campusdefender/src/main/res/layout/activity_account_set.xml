@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.my.account.AccountSetActivity">
+
+    <com.witaction.common.widget.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:Title="@string/account_set" />
+
+    <RelativeLayout
+        android:id="@+id/rl_head_avator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/selector_menu_item"
+        android:paddingStart="@dimen/dp_14"
+        android:paddingTop="@dimen/dp_04"
+        android:paddingEnd="@dimen/dp_14"
+        android:paddingBottom="@dimen/dp_04">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="@string/head_avator"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avator"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/icon_home_placeholder"
+            app:civ_border_color="@color/circle_img_border"
+            app:civ_border_overlay="false"
+            app:civ_border_width="@dimen/dp_04"
+            app:civ_circle_background_color="@color/transparent" />
+    </RelativeLayout>
+
+    <View style="@style/h_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_person_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_menu_item"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_14">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/real_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_person_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_chevron_right_black_20dp"
+            android:gravity="center_vertical"
+            android:text="@string/real_name"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <View style="@style/h_line" />
+
+    <TextView
+        android:id="@+id/tv_change_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_menu_item"
+        android:drawableEnd="@drawable/ic_chevron_right_black_20dp"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_14"
+        android:text="@string/change_pwd"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14" />
+
+    <View style="@style/h_line" />
+
+    <TextView
+        android:id="@+id/tv_person_face"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_menu_item"
+        android:drawableEnd="@drawable/ic_chevron_right_black_20dp"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_14"
+        android:text="@string/collect_face"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14" />
+
+    <View style="@style/h_line" />
+
+    <TextView
+        android:id="@+id/tv_change_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_menu_item"
+        android:drawableEnd="@drawable/ic_chevron_right_black_20dp"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_14"
+        android:text="@string/change_phone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14" />
+
+    <View style="@style/h_line" />
+</LinearLayout>

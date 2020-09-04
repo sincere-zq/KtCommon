@@ -24,6 +24,13 @@
         <item name="android:layout_height">1px</item>
         <item name="android:background">@color/c_divider</item>
     </style>
+
+    <!--横线-->
+    <style name="h_space">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_10</item>
+        <item name="android:background">@color/c_background</item>
+    </style>
     <!--竖线-->
     <style name="v_line">
         <item name="android:layout_width">1px</item>

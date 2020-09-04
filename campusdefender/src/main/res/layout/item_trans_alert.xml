@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_14"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_14"
+        android:paddingBottom="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/img_tag"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_default" />
+
+        <TextView
+            android:id="@+id/tv_tans_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_toEndOf="@id/img_tag"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_tans_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_tans_type"
+            android:layout_alignStart="@id/tv_tans_type"
+            android:layout_marginTop="@dimen/dp_05"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <View style="@style/h_line" />
+</LinearLayout>

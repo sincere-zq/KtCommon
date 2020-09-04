@@ -45,13 +45,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation junit
     androidTestImplementation androidx.testExt
     androidTestImplementation androidx.testEspresso
 
     api androidx.appcompat
+    api androidx.constraintlayout
+    api androidx.cardview
 
     api androidx.recyclerview
     //ViewBinding相关
@@ -94,6 +94,8 @@ dependencies {
     api gsy.player
     api gsy.armv7a
     api gsy.arm64
+    //eventbus
+    api greenrobot.eventbus
 
     api immersionbar
 

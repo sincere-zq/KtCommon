@@ -1,6 +1,8 @@
 package com.witaction.common.base
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -85,5 +87,24 @@ abstract class BActivity<VB : ViewBinding> : AppCompatActivity(), IActivity<VB> 
         if (AppManager.getInstance().activityNumber() > 1) {
             overridePendingTransition(0, R.anim.slide_out_right)
         }
+    }
+
+    protected fun getLoadingView(): View {
+        val view = LayoutInflater.from(this).inflate(R.layout.view_layout_loading, null)
+        return view
+    }
+
+    protected fun getNetErrorView(reload: () -> Unit): View {
+        val view = LayoutInflater.from(this).inflate(R.layout.view_net_error, null)
+        view.setOnClickListener {
+            reload()
+        }
+        return view
+    }
+
+    protected fun getEmptyView(reload: () -> Unit): View {
+        val view = LayoutInflater.from(this).inflate(R.layout.view_empty_data, null)
+        view.setOnClickListener { reload() }
+        return view
     }
 }

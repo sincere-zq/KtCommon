@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.witaction.common.R
 
 inline fun <reified T : Activity> Fragment.open(pBundle: Bundle? = null) {
     val intent = Intent(activity, T::class.java)
@@ -12,8 +13,7 @@ inline fun <reified T : Activity> Fragment.open(pBundle: Bundle? = null) {
     }
     activity?.startActivity(intent)
     activity?.overridePendingTransition(
-        android.R.anim.slide_in_left,
-        android.R.anim.slide_out_right
+        R.anim.slide_in_right, R.anim.fade_out
     )
 }
 
@@ -24,8 +24,7 @@ inline fun <reified T : Activity> Fragment.open(requestCode: Int, pBundle: Bundl
     }
     activity?.startActivityForResult(intent, requestCode)
     activity?.overridePendingTransition(
-        android.R.anim.slide_in_left,
-        android.R.anim.slide_out_right
+        R.anim.slide_in_right, R.anim.fade_out
     )
 }
 
@@ -36,7 +35,6 @@ fun Fragment.open(pAction: String?, pBundle: Bundle? = null) {
     }
     activity?.startActivity(intent)
     activity?.overridePendingTransition(
-        android.R.anim.slide_in_left,
-        android.R.anim.slide_out_right
+        R.anim.slide_in_right, R.anim.fade_out
     )
 }

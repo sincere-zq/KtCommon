@@ -3,13 +3,14 @@ package com.witaction.campusdefender.ui.login.splash
 import android.os.Bundle
 import com.witaction.campusdefender.R
 import com.witaction.campusdefender.databinding.ActivitySplashBinding
-import com.witaction.campusdefender.ui.LocalReponsitory
+import com.witaction.campusdefender.ui.ServiceLocalReponsitory
 import com.witaction.campusdefender.ui.ServiceReponsitory
 import com.witaction.campusdefender.ui.login.login.LoginActivity
-import com.witaction.campusdefender.ui.login.plat.PlatActivity
 import com.witaction.campusdefender.ui.main.MainActivity
 import com.witaction.common.base.BSplashActivity
 import com.witaction.common.extension.open
+import com.witaction.plat.PlatLocalReponsitory
+import com.witaction.plat.ui.plat.PlatActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -34,11 +35,13 @@ class SplashActivity : BSplashActivity<ActivitySplashBinding>() {
     override fun initView() {
         CoroutineScope(splashJob).launch {
             delay(splashJobTime)
-            val plat = LocalReponsitory.getPlat()
+            val plat = PlatLocalReponsitory.getPlat()
             if (plat == null) {
-                open<PlatActivity>()
+                val bundle = Bundle()
+                bundle.putSerializable(PlatActivity.CLASS_ACTIVITY, LoginActivity::class.java)
+                open<PlatActivity>(bundle)
             } else {
-                val user = LocalReponsitory.getUser()
+                val user = ServiceLocalReponsitory.getUser()
                 if (user == null) {
                     open<LoginActivity>()
                 } else {

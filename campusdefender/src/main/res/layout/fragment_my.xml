@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MyFragment">
+    android:orientation="vertical"
+    tools:context=".ui.main.my.MyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rl_user_info"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/my" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_menu_item"
+        android:paddingStart="@dimen/dp_14"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_14"
+        android:paddingBottom="@dimen/dp_10">
 
-</FrameLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avator"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_70"
+            android:src="@mipmap/icon_home_placeholder"
+            app:civ_border_color="@color/circle_img_border"
+            app:civ_border_overlay="false"
+            app:civ_border_width="@dimen/dp_04"
+            app:civ_circle_background_color="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_identity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_toEndOf="@id/img_avator"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_switch_identity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_radius_stroke_green"
+            android:paddingStart="@dimen/sp_10"
+            android:paddingTop="@dimen/dp_05"
+            android:paddingEnd="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_05"
+            android:text="@string/switch_identity"
+            android:textColor="@color/green"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <View style="@style/h_space" />
+
+    <TextView
+        android:id="@+id/tv_account_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_menu_item"
+        android:drawableStart="@mipmap/icon_account_setting"
+        android:drawableEnd="@drawable/ic_chevron_right_black_20dp"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_14"
+        android:text="@string/account_set"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14" />
+
+    <View style="@style/h_line" />
+
+    <TextView
+        android:id="@+id/tv_login_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_menu_item"
+        android:drawableStart="@mipmap/icon_exit"
+        android:drawableEnd="@drawable/ic_chevron_right_black_20dp"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_14"
+        android:text="@string/login_out"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14" />
+
+    <View style="@style/h_line" />
+
+</LinearLayout>

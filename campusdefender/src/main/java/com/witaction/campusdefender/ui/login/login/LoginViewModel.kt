@@ -4,12 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.witaction.campusdefender.AppConfig
 import com.witaction.campusdefender.ui.BRequest
+import com.witaction.campusdefender.ui.BResp
 import com.witaction.campusdefender.ui.ServiceReponsitory
-import com.witaction.common.base.BResp
+import com.witaction.campusdefender.ui.User
 import com.witaction.common.extension.launch
-import com.witaction.common.model.Plat
-import com.witaction.common.model.User
 import com.witaction.common.utils.DESUtil
+import com.witaction.plat.Plat
 
 class LoginViewModel : ViewModel() {
     val loginType = MutableLiveData(LoginActivity.LOGIN_BY_ACCOUNT)

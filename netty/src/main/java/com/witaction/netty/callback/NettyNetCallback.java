@@ -1,7 +1,7 @@
 package com.witaction.netty.callback;
 
 
-import com.zhixing.entity.event.ToastEvent;
+import com.witaction.netty.ToastEvent;
 import com.witaction.netty.view.NettyReqView;
 import com.witaction.netty.view.NettyRspView;
 
