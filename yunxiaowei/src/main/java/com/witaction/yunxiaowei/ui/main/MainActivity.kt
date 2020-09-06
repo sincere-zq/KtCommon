@@ -8,11 +8,12 @@ import com.eyepetizer.android.extension.invisible
 import com.eyepetizer.android.extension.visible
 import com.witaction.common.base.BVMActivity
 import com.witaction.common.base.BaseFragmentPagerAdapter
+import com.witaction.common.extension.load
 import com.witaction.common.utils.GlobalUtil
 import com.witaction.plat.PlatLocalReponsitory
-import com.witaction.yunxiaowei.AppConfig
 import com.witaction.yunxiaowei.R
 import com.witaction.yunxiaowei.databinding.ActivityMainBinding
+import com.witaction.yunxiaowei.framwork.AppConfig
 import com.witaction.yunxiaowei.ui.main.home.HomeFragment
 import com.witaction.yunxiaowei.ui.main.msg.MsgFragment
 import com.witaction.yunxiaowei.ui.main.my.MyFragment
@@ -57,6 +58,12 @@ class MainActivity : BVMActivity<ActivityMainBinding, MainViewModel>(),
         val plat = PlatLocalReponsitory.getPlat()
         plat?.let {
             vb.tvSchoolName.text = it.name
+        }
+    }
+
+    fun setSchoolLogo(schoolLogo: String) {
+        vb.imgLogo.load(schoolLogo) {
+            error(R.mipmap.icon_home_placeholder)
         }
     }
 

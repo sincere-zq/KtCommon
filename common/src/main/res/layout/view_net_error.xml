@@ -12,6 +12,7 @@
         android:src="@mipmap/img_no_net" />
 
     <TextView
+        android:id="@+id/message_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_10"

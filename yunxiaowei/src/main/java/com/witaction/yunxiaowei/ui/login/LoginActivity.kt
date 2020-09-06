@@ -15,9 +15,9 @@ import com.witaction.common.utils.toast
 import com.witaction.common.widget.HeaderView
 import com.witaction.plat.PlatLocalReponsitory
 import com.witaction.plat.ui.plat.PlatActivity
-import com.witaction.yunxiaowei.AppConfig
 import com.witaction.yunxiaowei.R
 import com.witaction.yunxiaowei.databinding.ActivityLoginBinding
+import com.witaction.yunxiaowei.framwork.AppConfig
 import com.witaction.yunxiaowei.framwork.LocalRepository
 import com.witaction.yunxiaowei.framwork.ServerRepository
 import com.witaction.yunxiaowei.ui.main.MainActivity

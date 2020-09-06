@@ -6,8 +6,8 @@ import androidx.lifecycle.observe
 import com.witaction.common.base.BSplashActivity
 import com.witaction.common.extension.open
 import com.witaction.plat.ui.plat.PlatActivity
-import com.witaction.yunxiaowei.AppConfig
 import com.witaction.yunxiaowei.databinding.ActivitySplashBinding
+import com.witaction.yunxiaowei.framwork.AppConfig
 import com.witaction.yunxiaowei.framwork.ServerRepository
 import com.witaction.yunxiaowei.ui.login.LoginActivity
 import com.witaction.yunxiaowei.ui.main.MainActivity

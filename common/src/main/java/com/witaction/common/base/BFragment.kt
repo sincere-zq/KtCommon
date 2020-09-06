@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.viewbinding.ViewBinding
@@ -90,6 +91,16 @@ abstract class BFragment<VB : ViewBinding> : Fragment(), IFragment<VB> {
 
     protected fun getNetErrorView(reload: () -> Unit): View {
         val view = LayoutInflater.from(activity).inflate(R.layout.view_net_error, null)
+        view.setOnClickListener {
+            reload()
+        }
+        return view
+    }
+
+    protected fun getNetErrorView(msg: String, reload: () -> Unit): View {
+        val view = LayoutInflater.from(activity).inflate(R.layout.view_net_error, null)
+        val messageView = view.findViewById<TextView>(R.id.message_view)
+        messageView.text = msg
         view.setOnClickListener {
             reload()
         }

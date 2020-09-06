@@ -1,5 +1,7 @@
 package com.witaction.yunxiaowei.framwork;
 
+import com.witaction.yunxiaowei.R;
+
 /**
  * app配置
  */
@@ -11,4 +13,9 @@ public interface AppConfig {
             R.drawable.selector_home_selector,
             R.drawable.selector_message_selector,
             R.drawable.selector_my_selector};
+    //首页每行菜单个数
+    int HOME_MENU_NUM = 4;
+    int STUDENT = 1;
+    int TEACHER = 2;
+    int PARENT = 3;
 }

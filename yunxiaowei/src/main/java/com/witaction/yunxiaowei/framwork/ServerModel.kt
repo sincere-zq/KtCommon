@@ -32,7 +32,7 @@ data class LoginResult(
 data class User(
     @SerializedName("PersonId") val personId: String,
     @SerializedName("Name") val name: String,
-    @SerializedName("AvatarUrl") var avatarUrl: String,
+    @SerializedName("AvatarUrl") val avatarUrl: String,
     @SerializedName("UserType") var userType: Int,
     @SerializedName("UserTypeText") val userTypeText: String,
     @SerializedName("ShowSwitchBtn") val showSwitchBtn: Int
@@ -61,7 +61,7 @@ data class HomeBanner(
  */
 data class FunctionMenu(
     @SerializedName("Id") val id: String,
-    @SerializedName("name") val name: String,
+    @SerializedName("Name") val name: String,
     @SerializedName("Sn") val sn: String,
     @SerializedName("Url") val url: String,
     @SerializedName("OrderNum") val orderNum: Int,
@@ -79,7 +79,7 @@ data class HomeDataResult(
     @SerializedName("MenuList") val menuList: MutableList<FunctionMenu>
 ) : Serializable
 
-data class HomeDataMenu(override val itemType: Int, val menuList: MutableList<FunctionMenu>) :
+data class HomeDataMenu(override val itemType: Int, val menuParentItem: FunctionMenu) :
     MultiItemEntity, Serializable
 
 data class HomeDataBanner(override val itemType: Int, val bannerList: MutableList<HomeBanner>) :

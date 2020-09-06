@@ -11,6 +11,7 @@ class HomeAdapter : BaseProviderMultiAdapter<MultiItemEntity>() {
 
     init {
         addItemProvider(HomeBannerItem())
+        addItemProvider(HomeFuncMenuItem())
     }
 
     override fun getItemType(data: List<MultiItemEntity>, position: Int): Int = data[position].itemType

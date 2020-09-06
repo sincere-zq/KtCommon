@@ -5,14 +5,18 @@ import androidx.lifecycle.ViewModel
 import com.witaction.common.extension.launch
 import com.witaction.yunxiaowei.BResp
 import com.witaction.yunxiaowei.HomeDataResult
+import com.witaction.yunxiaowei.User
+import com.witaction.yunxiaowei.framwork.LocalRepository
 import com.witaction.yunxiaowei.framwork.ServerRepository
 
 class HomeViewModel : ViewModel() {
-    val homeDataResult by lazy { MutableLiveData<BResp<HomeDataResult>>() }
+    val homeRealResultData by lazy { MutableLiveData<BResp<HomeDataResult>>() }
+
+    val userInfo by lazy { MutableLiveData<User>(LocalRepository.getUserInfo()) }
 
     fun getHomeData() {
         launch {
-            homeDataResult.value = ServerRepository.getHomeData()
+            homeRealResultData.value = ServerRepository.getHomeData()
         }
     }
 }

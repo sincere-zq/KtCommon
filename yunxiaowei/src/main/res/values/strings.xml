@@ -16,4 +16,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="switch_identity">切换身份</string>
+    <string name="account_set">账号设置</string>
+    <string name="login_out">退出登录</string>
+    <string name="student">学生</string>
+    <string name="parent">家长</string>
+    <string name="teacher">老师</string>
+    <string name="confirm_to_login_out">确认要退出登录吗？</string>
 </resources>

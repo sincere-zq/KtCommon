@@ -11,6 +11,7 @@ object LocalRepository {
     private val gson = Gson()
     private const val LOGIN_RESULT = "LOGIN_RESULT"
     private const val USER_INFO = "USER_INFO"
+
     /**
      * 保存登录结果
      */
@@ -39,5 +40,15 @@ object LocalRepository {
     fun getUserInfo(): User? {
         val string = GlobalUtil.sharedPreferences.getString(USER_INFO, "")
         return string?.let { gson.getObject(it) }
+    }
+
+    /**
+     * 退出登录
+     */
+    fun loginOut() {
+        GlobalUtil.sharedPreferences.edit {
+            remove(LOGIN_RESULT)
+            remove(USER_INFO)
+        }
     }
 }
