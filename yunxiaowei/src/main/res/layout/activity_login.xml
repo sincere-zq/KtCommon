@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.login.LoginActivity">
 
     <com.witaction.common.widget.HeaderView
@@ -53,26 +54,18 @@
 
                 <com.witaction.common.widget.ClearEditTextView
                     android:id="@+id/et_account"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/EditTextStyle"
                     android:layout_marginTop="@dimen/dp_20"
                     android:background="@null"
-                    android:hint="@string/please_input_account"
-                    android:paddingTop="@dimen/dp_10"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:textSize="@dimen/sp_20" />
+                    android:hint="@string/please_input_account" />
 
                 <View style="@style/h_line" />
 
                 <com.witaction.common.widget.ClearEditTextView
                     android:id="@+id/et_pwd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
+                    style="@style/EditTextStyle"
                     android:hint="@string/please_input_password"
-                    android:paddingTop="@dimen/dp_10"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:textSize="@dimen/sp_20" />
+                    android:inputType="textPassword" />
 
                 <View style="@style/h_line" />
             </LinearLayout>
@@ -93,15 +86,9 @@
 
                 <com.witaction.common.widget.ClearEditTextView
                     android:id="@+id/et_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_20"
-                    android:background="@null"
+                    style="@style/EditTextStyle"
                     android:hint="@string/please_input_phone"
-                    android:inputType="phone"
-                    android:paddingTop="@dimen/dp_10"
-                    android:paddingBottom="@dimen/dp_10"
-                    android:textSize="@dimen/sp_20" />
+                    android:inputType="phone" />
 
                 <View style="@style/h_line" />
 
@@ -163,14 +150,10 @@
 
         <Button
             android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
             android:layout_marginTop="@dimen/dp_20"
-            android:background="@drawable/selector_login_btn"
             android:enabled="false"
-            android:text="@string/agreement_and_login"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_20" />
+            android:text="@string/agreement_and_login" />
 
     </LinearLayout>
 

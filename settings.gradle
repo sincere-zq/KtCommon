@@ -1,5 +1,5 @@
 rootProject.name='Common'
-include ':common', ':videocompressor', ':androidserialport', ':usbdriver', ':zxing', ':entity', ':netty', ':vlc'
+include ':common', ':videocompressor', ':androidserialport', ':usbdriver', ':zxing', ':entity', ':netty', ':vlc', ':faceLiving'
 include ':websocket'
 include ':campusdefender'
 include ':yunxiaowei'

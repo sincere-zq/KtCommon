@@ -184,6 +184,13 @@ object GlobalUtil {
     }
 
     /**
+     * 获取int数组
+     */
+    fun getIntArray(resId: Int): IntArray {
+        return BApp.context.resources.getIntArray(resId)
+    }
+
+    /**
      * 获取资源文件中定义的字符串。
      *
      * @param resId

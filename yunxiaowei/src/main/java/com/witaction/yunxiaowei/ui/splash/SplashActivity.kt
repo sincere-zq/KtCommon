@@ -51,10 +51,8 @@ class SplashActivity : BSplashActivity<ActivitySplashBinding>() {
         }
         vm.loginResult.observe(this) {
             if (it.isSuccess()) {
-                it.getSimpleData()?.let {
-                    open<MainActivity>()
-                    finish()
-                }
+                open<MainActivity>()
+                finish()
             } else {
                 open<LoginActivity>()
                 finish()

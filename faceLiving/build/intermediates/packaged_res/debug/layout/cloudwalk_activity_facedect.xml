@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <cn.cloudwalk.libproject.camera.CameraPreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/top_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ImageView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/step_bg">
+
+        <cn.cloudwalk.libproject.view.RoundProgressBarWidthNumber
+            android:id="@+id/cloudwalk_face_step_procress"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:max="8"
+            android:padding="5dp"
+            android:progress="8" />
+
+        <cn.cloudwalk.libproject.view.CustomViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            android:layout_gravity="center" />
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_frame_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="0fps"
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
+</RelativeLayout>

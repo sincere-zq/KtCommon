@@ -1,0 +1,95 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:1-44:12
+INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:1-44:12
+INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:1-44:12
+INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:1-44:12
+INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:1-44:12
+INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:1-44:12
+INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:1-44:12
+	package
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:4:5-38
+		INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml
+		INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:6:5-30
+		INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml
+		INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:5:5-28
+		INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml
+		INJECTED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:8:22-62
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:9:5-75
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:9:22-72
+application
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:11:5-42:19
+activity#cn.cloudwalk.libproject.LiveStartActivity
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:12:9-16:43
+	android:launchMode
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:14:13-44
+	tools:targetApi
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:16:13-40
+	android:theme
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:15:13-66
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:13:13-46
+activity#cn.cloudwalk.libproject.LiveServerActivity
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:17:9-21:43
+	android:launchMode
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:19:13-44
+	tools:targetApi
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:21:13-40
+	android:theme
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:20:13-66
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:18:13-47
+activity#cn.cloudwalk.libproject.LiveResultActivity
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:22:9-26:43
+	android:launchMode
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:24:13-44
+	tools:targetApi
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:26:13-40
+	android:theme
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:23:13-47
+activity#cn.cloudwalk.libproject.LiveActivity
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:27:9-31:43
+	android:launchMode
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:29:13-44
+	tools:targetApi
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:31:13-40
+	android:theme
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:30:13-66
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:28:13-41
+activity#cn.cloudwalk.libproject.BestFaceActivity
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:32:9-36:43
+	android:launchMode
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:34:13-44
+	tools:targetApi
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:36:13-40
+	android:theme
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:35:13-66
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:33:13-45
+activity#cn.cloudwalk.libproject.TemplatedActivity
+ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:37:9-41:43
+	android:launchMode
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:39:13-44
+	tools:targetApi
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:41:13-40
+	android:theme
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:40:13-66
+	android:name
+		ADDED from E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:38:13-46

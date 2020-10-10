@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/red"
+    android:layout_height="45dp">
+
+  <ImageView
+      android:id="@+id/actionbar_left_btn"
+      android:layout_width="40dp"
+      android:layout_height="fill_parent"
+      android:src="@drawable/back"
+      android:background="@drawable/cloudwalk_actionbar_btn_selector"
+      android:scaleType="center"
+      android:clickable="true"
+      android:layout_gravity="center_vertical|left"/>
+
+  <TextView
+      android:id="@+id/actionbar_title"
+      android:clickable="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      style="@style/normalTextwhite"
+     android:text="@string/app_name"/>
+
+  <ImageView
+      android:id="@+id/actionbar_right_btn"
+      android:layout_width="40dp"
+      android:layout_height="50dp"
+      android:background="@drawable/cloudwalk_actionbar_btn_selector"
+      android:scaleType="center"
+      android:clickable="true"
+      android:layout_gravity="center_vertical|right"
+      android:visibility="gone"/>
+
+  <TextView
+      android:id="@+id/actionbar_right_text"
+      android:layout_width="40dp"
+      android:layout_height="50dp"
+      android:background="@drawable/cloudwalk_actionbar_btn_selector"
+      android:gravity="center"
+      android:clickable="true"
+      android:textColor="@android:color/white"
+      android:textSize="16sp"
+      android:layout_gravity="center_vertical|right"
+      android:visibility="gone"/>
+</FrameLayout>

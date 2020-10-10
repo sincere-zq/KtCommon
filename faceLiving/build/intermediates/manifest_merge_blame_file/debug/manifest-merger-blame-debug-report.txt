@@ -1,0 +1,79 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="cn.cloudwalk.libproject"
+5    android:versionCode="1"
+6    android:versionName="1.0" >
+7
+8    <uses-permission android:name="android.permission.CAMERA" />
+8-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:8:5-65
+8-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:8:22-62
+9    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+9-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:9:5-75
+9-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:9:22-72
+10
+11    <application>
+11-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:11:5-42:19
+12        <activity
+12-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:12:9-16:43
+13            android:name="cn.cloudwalk.libproject.LiveStartActivity"
+13-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:13:13-46
+14            android:launchMode="singleTask"
+14-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:14:13-44
+15            android:theme="@android:style/Theme.Holo.NoActionBar"
+15-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:15:13-66
+16            tools:targetApi="honeycomb" />
+16-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:16:13-40
+17        <activity
+17-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:17:9-21:43
+18            android:name="cn.cloudwalk.libproject.LiveServerActivity"
+18-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:18:13-47
+19            android:launchMode="singleTask"
+19-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:19:13-44
+20            android:theme="@android:style/Theme.Holo.NoActionBar"
+20-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:20:13-66
+21            tools:targetApi="honeycomb" />
+21-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:21:13-40
+22        <activity
+22-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:22:9-26:43
+23            android:name="cn.cloudwalk.libproject.LiveResultActivity"
+23-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:23:13-47
+24            android:launchMode="singleTask"
+24-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:24:13-44
+25            android:theme="@android:style/Theme.Holo.NoActionBar"
+25-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:25:13-66
+26            tools:targetApi="honeycomb" />
+26-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:26:13-40
+27        <activity
+27-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:27:9-31:43
+28            android:name="cn.cloudwalk.libproject.LiveActivity"
+28-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:28:13-41
+29            android:launchMode="singleTask"
+29-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:29:13-44
+30            android:theme="@android:style/Theme.Holo.NoActionBar"
+30-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:30:13-66
+31            tools:targetApi="honeycomb" />
+31-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:31:13-40
+32        <activity
+32-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:32:9-36:43
+33            android:name="cn.cloudwalk.libproject.BestFaceActivity"
+33-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:33:13-45
+34            android:launchMode="singleTask"
+34-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:34:13-44
+35            android:theme="@android:style/Theme.Holo.NoActionBar"
+35-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:35:13-66
+36            tools:targetApi="honeycomb" />
+36-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:36:13-40
+37        <activity
+37-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:37:9-41:43
+38            android:name="cn.cloudwalk.libproject.TemplatedActivity"
+38-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:38:13-46
+39            android:launchMode="singleTask"
+39-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:39:13-44
+40            android:theme="@android:style/Theme.Holo.NoActionBar"
+40-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:40:13-66
+41            tools:targetApi="honeycomb" />
+41-->E:\As3.6WorkSpace\Common\faceLiving\AndroidManifest.xml:41:13-40
+42    </application>
+43
+44</manifest>

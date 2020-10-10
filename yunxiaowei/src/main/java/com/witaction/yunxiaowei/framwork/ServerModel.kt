@@ -8,7 +8,7 @@ data class BResp<T>(
     @SerializedName("IsSuccess")
     var isSuccess: Int,
     @SerializedName("Message")
-    val msg: String,
+    var msg: String,
     @SerializedName("ErrorCode")
     val errorCode: String,
     @SerializedName("Data")
@@ -31,8 +31,8 @@ data class LoginResult(
  */
 data class User(
     @SerializedName("PersonId") val personId: String,
-    @SerializedName("Name") val name: String,
-    @SerializedName("AvatarUrl") val avatarUrl: String,
+    @SerializedName("Name") var name: String,
+    @SerializedName("AvatarUrl") var avatarUrl: String,
     @SerializedName("UserType") var userType: Int,
     @SerializedName("UserTypeText") val userTypeText: String,
     @SerializedName("ShowSwitchBtn") val showSwitchBtn: Int
@@ -85,3 +85,83 @@ data class HomeDataMenu(override val itemType: Int, val menuParentItem: Function
 data class HomeDataBanner(override val itemType: Int, val bannerList: MutableList<HomeBanner>) :
     MultiItemEntity, Serializable
 
+/**
+ * 更新头像结果
+ */
+data class UpdateAvatarResult(@SerializedName("AvatarUrl") val avatarUrl: String) : Serializable
+
+/**
+ * 人员人脸
+ */
+data class PersonFace(
+    @SerializedName("SortCode") val sortCode: String,
+    @SerializedName("FaceId") val faceId: String,
+    @SerializedName("ImageFilePath") val imageFilePath: String
+) : Serializable
+
+/**
+ * 班级
+ */
+data class ClassBean(
+    @SerializedName("Id") val id: String,
+    @SerializedName("Name") val name: String,
+    @SerializedName("Grade") val grade: String,
+    @SerializedName("IsClassTeacher") val isClassTeacher: Boolean,
+    @SerializedName("ClassTeacherName") val classTeacherName: String,
+    @SerializedName("ClassTeacherAccount") val classTeacherAccount: String,
+    @SerializedName("Scount") val scount: Int
+) : Serializable
+
+/**
+ * 学生花名册
+ */
+data class StudentRoster(
+    @SerializedName("Id") val id: String,
+    @SerializedName("Name") val name: String,
+    @SerializedName("AvatarUrl") val avatarUrl: String,
+    @SerializedName("IdentityNo") val identityNo: String,
+    @SerializedName("Sex") val sex: String,
+    @SerializedName("StudentNo") val studentNo: String,
+    @SerializedName("IdentityNoValid") val identityNoValid: Int
+) : Serializable
+
+/**
+ * 课表
+ */
+data class ClassTimetable(
+    @SerializedName("ClassId") val classId: String,
+    @SerializedName("ClassName") val className: String,
+    @SerializedName("Semeter") val semeter: String,
+    @SerializedName("DaySection") val daySection: Int,
+    @SerializedName("CourseList") val courseList: MutableList<WeekCourse>
+) : Serializable
+
+/**
+ * 周课程
+ */
+data class WeekCourse(
+    @SerializedName("DayOfWeek") val dayOfWeek: Int,
+    @SerializedName("List") val list: MutableList<CourseBean>
+) : Serializable
+
+/**
+ * 课程
+ */
+data class CourseBean(
+    @SerializedName("DayOfWeek") val dayOfWeek: Int,
+    @SerializedName("DayOfWeekStr") val dayOfWeekStr: String,
+    @SerializedName("TeacherName") val teacherName: String,
+    @SerializedName("CourseName") val courseName: String,
+    @SerializedName("ClassRoomName") val classRoomName: String,
+    @SerializedName("ClassName") val className: String,
+    @SerializedName("Section") val section: Int,
+    @SerializedName("DaySection") val daySection: Int
+) : Serializable
+
+/**
+ * 节次课程
+ */
+data class CourseSection(
+    val section: Int,
+    val courseList: MutableList<String>
+) : Serializable

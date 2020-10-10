@@ -1,9 +1,16 @@
 package com.witaction.yunxiaowei.framwork
 
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import com.witaction.common.NetConfig
+import com.witaction.common.base.AppManager
+import com.witaction.common.extension.open
 import com.witaction.common.utils.DensityUtils.screenPixel
 import com.witaction.common.utils.GlobalUtil
+import com.witaction.common.utils.toast
+import com.witaction.yunxiaowei.R
+import com.witaction.yunxiaowei.ui.login.LoginActivity
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
@@ -24,9 +31,12 @@ class ServerCreator private constructor() {
         const val READ_TIME_OUT: Long = 60
         const val WRITE_TIME_OUT: Long = 60
         const val CONNECT_TIME_OUT: Long = 60
+        const val NEED_RELOGIN = 402
         @JvmStatic
         fun getInstance() = SingleHolder.instance
     }
+
+    private val handler = Handler(Looper.getMainLooper())
 
     private object SingleHolder {
         val instance = ServerCreator()
@@ -39,6 +49,7 @@ class ServerCreator private constructor() {
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(HeaderInterceptor())
             .addInterceptor(interceptor)
+            .addInterceptor(TokenInterceptor())
             .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
             .writeTimeout(WRITE_TIME_OUT, TimeUnit.SECONDS)
             .connectTimeout(CONNECT_TIME_OUT, TimeUnit.SECONDS)
@@ -61,12 +72,24 @@ class ServerCreator private constructor() {
                         "Authorization",
                         "Bearer ${it.accessToken}"
                     )
-                    header("Content-Type","application/x-www-form-urlencoded")
-                    header("X-Requested-With","XMLHttpRequest")
+                    header("Content-Type", "application/x-www-form-urlencoded")
+                    header("X-Requested-With", "XMLHttpRequest")
                 }
             }.build()
             return chain.proceed(request)
         }
+    }
+
+    class TokenInterceptor : Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val response = chain.proceed(chain.request())
+            if (response.code() == NEED_RELOGIN) {
+                getInstance().handler.post { toast(R.string.need_relogin) }
+                AppManager.getInstance().getTopActivity()?.open<LoginActivity>()
+            }
+            return response
+        }
+
     }
 
     class BasicParamsInterceptor : Interceptor {

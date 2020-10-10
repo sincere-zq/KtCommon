@@ -9,7 +9,11 @@ import com.witaction.yunxiaowei.HomeBanner
 import com.witaction.yunxiaowei.HomeDataBanner
 import com.witaction.yunxiaowei.HomeDataMenu
 import com.witaction.yunxiaowei.databinding.FragmentHomeBinding
+import com.witaction.yunxiaowei.framwork.MsgEvent
 import com.witaction.yunxiaowei.ui.main.MainActivity
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 /**
  * 首页
@@ -22,6 +26,7 @@ class HomeFragment : BVMFragment<FragmentHomeBinding, HomeViewModel>() {
         FragmentHomeBinding.inflate(layoutInflater)
 
     override fun initView() {
+        EventBus.getDefault().register(this)
         vb.refreshlayout.setEnableLoadMore(false)
         vb.refreshlayout.setOnRefreshListener { vm.getHomeData() }
         vb.recyclerview.adapter = adapter
@@ -41,10 +46,7 @@ class HomeFragment : BVMFragment<FragmentHomeBinding, HomeViewModel>() {
                         vm.getHomeData()
                     })
                 } else {
-                    result.schoolInfo?.let { it1 ->
-                        (activity as MainActivity).setSchoolLogo(it1.sLogo)
-                    }
-
+                    (activity as MainActivity).setSchoolLogo(result.schoolInfo.sLogo)
                     val datas = mutableListOf<MultiItemEntity>(
                         HomeDataBanner(
                             HomeAdapter.HOME_BANNER,
@@ -70,4 +72,12 @@ class HomeFragment : BVMFragment<FragmentHomeBinding, HomeViewModel>() {
         vm.getHomeData()
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun refreshHomeData(event: MsgEvent.RefreshHomeDataEvent) {
+        event.run {
+            if (this.isRefresh) {
+                vm.getHomeData()
+            }
+        }
+    }
 }

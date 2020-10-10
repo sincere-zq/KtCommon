@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.home.classaffairs.ClassAffairActivity">
+
+    <com.witaction.common.widget.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:Title="@string/class_affair" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_divider"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_stu_roster"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:text="@string/student_roster" />
+
+        <TextView
+            android:id="@+id/tv_class_timetable"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/class_timetable" />
+
+        <TextView
+            android:id="@+id/tv_student_leave"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/student_leave" />
+
+        <TextView
+            android:id="@+id/tv_student_leave_record"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/student_leave_record" />
+
+        <TextView
+            android:id="@+id/tv_temp_manage"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/temp_manage" />
+
+        <TextView
+            android:id="@+id/tv_select_course_manage"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/select_course_manage" />
+
+        <TextView
+            android:id="@+id/tv_select_course_statistic"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/select_course_statistic" />
+
+        <TextView
+            android:id="@+id/tv_invitation_parent"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/invitation_parent" />
+
+        <TextView
+            android:id="@+id/tv_open_parent_meeting"
+            style="@style/TextView_Have_Right_Arrow_Style"
+            android:layout_marginTop="1px"
+            android:text="@string/open_parent_meeting" />
+    </LinearLayout>
+
+</LinearLayout>

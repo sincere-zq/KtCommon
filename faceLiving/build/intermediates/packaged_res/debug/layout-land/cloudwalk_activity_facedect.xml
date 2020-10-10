@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <cn.cloudwalk.libproject.camera.CameraPreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/copyright_iv"
+        android:layout_width="67.5dp"
+        android:layout_height="18.5dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:id="@+id/top_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </ImageView>
+
+    <RelativeLayout
+         android:id="@+id/bottom_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp" 
+         android:layout_alignParentBottom="true"
+        android:background="@color/step_bg">
+        <cn.cloudwalk.libproject.view.RoundProgressBarWidthNumber
+        android:id="@+id/cloudwalk_face_step_procress"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="5dp"
+        android:max="8"
+       
+        android:progress="8" />
+
+        <cn.cloudwalk.libproject.view.CustomViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+           
+            android:layout_gravity="center"
+             />
+    </RelativeLayout>
+
+</RelativeLayout>

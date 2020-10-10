@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.home.classaffairs.addstatus.AddStudentStatusActivity">
+
+    <com.witaction.common.widget.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:Title="@string/stu_status_manage" />
+
+    <TextView
+        android:id="@+id/tv_stu_name"
+        style="@style/Text16Style"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/dp_14"
+        android:text="@string/app_name" />
+
+    <View style="@style/h_line" />
+
+    <com.witaction.common.widget.ClearEditTextView
+        android:id="@+id/et_stu_status"
+        style="@style/EditTextStyle"
+        android:background="@color/white"
+        android:hint="@string/please_input_stu_status"
+        android:padding="@dimen/dp_14"
+        android:textSize="@dimen/sp_16" />
+
+    <Button
+        android:id="@+id/btn_commit"
+        style="@style/ButtonStyle"
+        android:layout_margin="@dimen/dp_14"
+        android:text="@string/commit" />
+</LinearLayout>

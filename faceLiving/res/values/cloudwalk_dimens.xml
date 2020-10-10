@@ -1,0 +1,14 @@
+<resources>
+
+  <!-- 字体定义 -->
+    <dimen name="BiggerTextSize">22.0sp</dimen>
+    <dimen name="SmallTextSize">14.0sp</dimen>
+    <dimen name="MiddleTextSize">16.0sp</dimen>
+    <dimen name="NormalTextSize">18.0sp</dimen>
+    <dimen name="InputEditTextMinHeight">25.0dip</dimen>
+    <dimen name="SmallListHeight">48.0dip</dimen>
+    <dimen name="NormalPadding">12.0dip</dimen>
+    <dimen name="OneDPPadding">1.0dip</dimen>
+    
+  
+</resources>

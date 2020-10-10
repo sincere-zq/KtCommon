@@ -6,6 +6,7 @@ import com.witaction.common.extension.launch
 import com.witaction.plat.Plat
 import com.witaction.yunxiaowei.BResp
 import com.witaction.yunxiaowei.LoginResult
+import com.witaction.yunxiaowei.framwork.LocalRepository
 import com.witaction.yunxiaowei.framwork.ServerRepository
 
 class LoginViewModel : ViewModel() {
@@ -18,12 +19,12 @@ class LoginViewModel : ViewModel() {
         launch {
             plat.value?.let {
                 val request = mutableMapOf(
-                    Pair("Account", account),
-                    Pair("PassWord", pwd),
-                    Pair("ClientType", clientType),
-                    Pair("SchoolId", it.sysID)
+                    "Account" to account, "PassWord" to pwd,
+                    "ClientType" to clientType, "SchoolId" to it.sysID
                 )
-                user.value = ServerRepository.loginByAccount(request)
+                val result = ServerRepository.loginByAccount(request)
+                getUserInfo(ServerRepository.loginByAccount(request))
+                user.value = result
             }
         }
     }
@@ -32,8 +33,8 @@ class LoginViewModel : ViewModel() {
         launch {
             plat.value?.let {
                 val request = mutableMapOf<String, Any>(
-                    Pair("MobilePhone", phone),
-                    Pair("SchoolId", it.sysID)
+                    "MobilePhone" to phone,
+                    "SchoolId" to it.sysID
                 )
                 phoneValidateResult.value = ServerRepository.getLoginCode(request)
             }
@@ -44,13 +45,29 @@ class LoginViewModel : ViewModel() {
         launch {
             plat.value?.let {
                 val request = mutableMapOf(
-                    Pair("MobilePhone", phone),
-                    Pair("VerCode", code),
-                    Pair("ClientType", clientType),
-                    Pair("SchoolId", it.sysID)
+                    "MobilePhone" to phone, "VerCode" to code,
+                    "ClientType" to clientType, "SchoolId" to it.sysID
                 )
-                user.value = ServerRepository.loginByCode(request)
+                val result = ServerRepository.loginByCode(request)
+                getUserInfo(result)
+                user.value = result
             }
         }
     }
+
+    private suspend fun getUserInfo(result: BResp<LoginResult>) {
+        if (result.isSuccess()) {
+            result.getSimpleData()?.let {
+                LocalRepository.saveLoginResult(it)
+                val userInfo = ServerRepository.getUserInfo()
+                if (userInfo.isSuccess() && userInfo.getSimpleData() != null) {
+                    LocalRepository.saveUserInfo(userInfo.getSimpleData()!!)
+                } else {
+                    result.isSuccess = 0
+                    result.msg = userInfo.msg
+                }
+            }
+        }
+    }
+
 }

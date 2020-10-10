@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -120,6 +121,14 @@ public class HeaderView extends RelativeLayout {
         binding.tvHeaderRight.setVisibility(rightTextShow ? VISIBLE : GONE);
         binding.tvHeaderRight.setTextColor(rightTextColor);
         binding.tvHeaderRight.setTextSize(DensityUtils.INSTANCE.px2sp(rightTextSize));
+
+        if (Build.VERSION.SDK_INT >= 21) {//5.0以上系统判断
+            int[] attrss = {android.R.attr.selectableItemBackgroundBorderless};
+            TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrss);
+            int resourceId = typedArray.getResourceId(0, 0);
+            binding.ivHeaderLeft.setBackgroundResource(resourceId);
+        }
+
     }
 
     public void setTitle(String title) {

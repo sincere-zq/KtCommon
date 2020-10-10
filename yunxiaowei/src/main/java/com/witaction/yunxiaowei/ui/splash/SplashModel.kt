@@ -24,21 +24,22 @@ class SplashModel : ViewModel() {
                     Pair("RefreshToken", it.refreshToken)
                 )
                 val result = ServerRepository.refreshToken(params)
-                if (result.isSuccess()) {
-                    getUserInfo(result)
-                }
+                getUserInfo(result)
                 loginResult.value = result
             }
         }
     }
 
-    suspend fun getUserInfo(result: BResp<LoginResult>) {
-        if (LocalRepository.getUserInfo() == null) {
-            val userInfo = ServerRepository.getUserInfo()
-            if (userInfo.isSuccess() && userInfo.getSimpleData() != null) {
-                LocalRepository.saveUserInfo(userInfo.getSimpleData()!!)
-            } else {
-                result.isSuccess = 0
+    private suspend fun getUserInfo(result: BResp<LoginResult>) {
+        if (result.isSuccess()) {
+            result.getSimpleData()?.let {
+                LocalRepository.saveLoginResult(it)
+                val userInfo = ServerRepository.getUserInfo()
+                if (userInfo.isSuccess() && userInfo.getSimpleData() != null) {
+                    LocalRepository.saveUserInfo(userInfo.getSimpleData()!!)
+                } else {
+                    result.isSuccess = 0
+                }
             }
         }
     }

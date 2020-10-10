@@ -18,4 +18,6 @@ public interface AppConfig {
     int STUDENT = 1;
     int TEACHER = 2;
     int PARENT = 3;
+    //头像大小
+    int HEAD_AVATAR = 300;
 }

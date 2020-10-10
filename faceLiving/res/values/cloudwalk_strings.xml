@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--准备阶段提示信息-->
+    <string name="cloudwalk_tip_too_far">请再近一点</string>
+    <string name="cloudwalk_tip_too_close">请再远一点</string>
+    <string name="cloudwalk_tip_not_frontal">请正对屏幕</string>
+    <string name="cloudwalk_tip_not_stable">请不要晃动</string>
+    <string name="cloudwalk_tip_too_dark">请正对屏幕,确保光线充足</string>
+    <string name="cloudwalk_tip_too_bright">请调整光线,避开强光</string>
+    <string name="cloudwalk_tip_not_center">请按图示将人脸放入取景框中</string>
+    <string name="cloudwalk_tip_no_face">没有检测到人脸</string>
+    <string name="cloudwalk_tip_glass">请勿遮挡人脸</string>
+    <string name="cloudwalk_tip_face_shield">请勿遮挡人脸</string>
+    <string name="cloudwalk_tip_eye_too_small">眼睛睁大一点</string>
+    <string name="cloudwalk_tip_mouth_too_small">嘴巴张大一点</string>
+
+    <string name="cloudwalk_tip_light">请正对手机,确保光线充足</string>
+    <string name="cloudwalk_tip_himself">请确保是账户本人操作</string>
+    <string name="cloudwalk_start_dect">开始检测</string>
+    <string name="cloudwalk_faceserver_live">后端防Hack验证中</string>
+    <string name="cloudwalk_faceverifying">人脸比对中….</string>
+    <string name="cloudwalk_live_headleft">向左缓慢转头</string>
+    <string name="cloudwalk_live_headright">向右缓慢转头</string>
+    <string name="cloudwalk_live_headup">缓慢抬头</string>
+    <string name="cloudwalk_live_headdown">缓慢点头</string>
+    <string name="cloudwalk_live_mouth">张嘴</string>
+    <string name="cloudwalk_live_eye">眨眼</string>
+
+    
+     <string name="cloudwalk_live_title">活体检测</string>
+     <string name="cloudwalk_bestface_title">最佳人脸</string>
+    <string name="cloudwalk_copy_modules">正在初始化运行环境</string>
+    <string name="cloudwalk_copy_modules_failed">初始化模型文件失败</string>
+    <!-- 结果提示页面提示语句 -->
+
+    <string name="facedect_fail">检测失败</string>
+    <string name="facedect_ok">检测成功</string>
+    <string name="face_verfy_fail">验证失败</string>
+    <string name="face_verfy_ok">验证成功</string>
+    <string name="facedect_fail_tip">抱歉,人脸检测失败</string>
+    <string name="face_verfy_fail_tip">抱歉,人脸验证失败!</string>
+    <string name="facedectfail_fakeface">检测失败，未按提示做出相应的动作!</string>
+    <string name="facedectfail_changeface">检测失败,检测到换人!</string>
+    <string name="facedectfail_moreface">检测失败,检测到多个人!</string>
+    <string name="facedectfail_timeout">检测超时,请在规定的时间内做出相应的动作</string>
+    <string name="facedectfail_noface">检测失败，请按图示将人脸放入取景框中!</string>
+    <string name="facedect_ok_tip">检测成功,感谢您的配合!</string>
+    <string name="facedec_net_fail">网络连接失败,请检查网络后再试!</string>
+    <string name="facedectfail_appid">初始化失败,授权码无效!</string>
+    <string name="faceattr_not_avaliable">抱歉,此功能暂未开通,敬请期待!</string>
+    <string name="facedectfail_actionblend">检测失败,请按照提示做出相应的动作</string>
+    <string name="faceattack_4">-4 黑白图片攻击!</string>
+    <string name="faceattack_7">-7 换人攻击!</string>
+    <string name="faceattack_8">-8 多张人脸!</string>
+    <string name="face_verfy_ok_tip">验证成功,感谢您的配合!</string>
+    <string name="back">返回</string>
+    <string name="yes">确定</string>
+    <string name="commit">重新检测</string>
+    <string name="restart">重新验证</string>
+    <string name="facedectfail">检测失败</string>
+    <string name="facedectsuc">检测成功</string>
+    <string name="faceverifyfail">验证失败</string>
+    <string name="faceverifysuc">验证成功</string>
+    <!--最佳人脸-->
+    <string name="bestface_fail">检测失败,获取最佳人脸失败</string>
+
+    <!--后端活体-->
+    <string name="facedect_ok_server">后端防hack攻击成功</string>
+    <string name="facedect_ok_offline">前端检测成功</string>
+    <string name="facedect_fail_server">后端防hack攻击失败</string>
+    <string name="facedect_fail_offline">前端检测失败</string>
+</resources>

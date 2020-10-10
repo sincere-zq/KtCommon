@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.net.Uri;
+import android.util.Base64;
 
 import androidx.exifinterface.media.ExifInterface;
 
@@ -92,6 +93,13 @@ public class BitmapUtils {
     }
 
     /**
+     * 把图片byte流转换成Base64
+     */
+    public static String byte2Base64(byte[] b) {
+        return Base64.encodeToString(b, Base64.NO_WRAP);
+    }
+
+    /**
      * 读取图片的旋转的角度
      *
      * @param path 图片绝对路径
@@ -147,5 +155,44 @@ public class BitmapUtils {
             bm.recycle();
         }
         return returnBm;
+    }
+
+    /**
+     * @param @param  base64String
+     * @param @return 设定文件
+     * @return Bitmap    返回类型
+     * @throws
+     * @Title: nv21ToBitmap
+     * @Description: TODO(nv21转换为Bitmap)
+     */
+    public static String byteToBase64(byte[] bytes) {
+        Bitmap bitmap = null;
+        int width = 480;
+        int height = 640;
+        int degress = 0;
+        boolean mirror = true;
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 2;
+        options.inJustDecodeBounds = false;
+        bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
+        if (degress > 0) {
+            Matrix m = new Matrix();
+            if (mirror) {
+                m.setScale(-1, 1);
+            }
+            m.postRotate(degress);
+            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);
+        }
+        return getBitmapJpgStrBase64(bitmap);
+    }
+
+    /**
+     * 把Bimtmap转成jpg 模式的Base64，用于上传图片到服务器，一般是先压缩然后转成Base64，在上传
+     */
+    public static String getBitmapJpgStrBase64(Bitmap bitmap) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] bytes = baos.toByteArray();
+        return Base64.encodeToString(bytes, Base64.NO_WRAP);
     }
 }

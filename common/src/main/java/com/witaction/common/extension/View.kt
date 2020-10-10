@@ -1,7 +1,10 @@
 package com.eyepetizer.android.extension
 
+import android.content.res.TypedArray
+import android.os.Build
 import android.view.View
 import android.view.animation.AlphaAnimation
+import com.witaction.common.R
 
 /**
  * 显示view
@@ -21,6 +24,17 @@ fun View?.visibleAlphaAnimation(duration: Long = 500L) {
         this.duration = duration
         fillAfter = true
     })
+}
+
+fun View.setTouchFeedBack() {
+    context?.let {
+        if (Build.VERSION.SDK_INT >= 21) { //5.0以上系统判断
+            val attrs = intArrayOf(R.attr.selectableItemBackgroundBorderless)
+            val typedArray: TypedArray = it.theme.obtainStyledAttributes(attrs)
+            val resourceId = typedArray.getResourceId(0, 0)
+            setBackgroundResource(resourceId)
+        }
+    }
 }
 
 /**

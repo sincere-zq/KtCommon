@@ -12,7 +12,7 @@ import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import kotlin.coroutines.resume
 
-const val SERVICE_NOT_EXIST = "服务器地址不存在"
+const val SERVICE_NOT_EXIST = "网络连接已断开"
 const val CONNECT_TIME_OUT = "服务器连接超时"
 const val CONNECT_FAIL = "连接失败"
 const val RESPONSE_NULL = "返回数据为空"

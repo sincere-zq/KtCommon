@@ -26,4 +26,14 @@
     <color name="orange_low">#fef5de</color>
     <color name="red">#fb6e52</color>
     <color name="green">#25bc85</color>
+
+
+    <color name="rgb_8ed697">#8ed697</color>
+    <color name="rgb_8ab1db">#8ab1db</color>
+    <color name="rgb_e78e80">#e78e80</color>
+    <color name="rgb_cdd76a">#cdd76a</color>
+    <color name="rgb_c989a8">#c989a8</color>
+    <color name="rgb_EA7D4A">#EA7D4A</color>
+    <color name="rgb_67cdcf">#67cdcf</color>
+    <color name="rgb_1dcb7c">#1dcb7c</color>
 </resources>

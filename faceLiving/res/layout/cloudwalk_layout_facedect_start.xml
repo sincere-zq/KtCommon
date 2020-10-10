@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cloudwalk_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        style="@style/normalTextwhite"
+        android:text="@string/cloudwalk_tip_light"
+        android:gravity="center" >
+    </TextView>
+
+    
+    <RelativeLayout 
+         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        
+         android:background="@color/cloudwalk_guide"
+       
+        >
+        
+         <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+       android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/cloudwalk_guide"
+         >
+    </ImageView>
+    </RelativeLayout>
+   
+    
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+         android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/smallTexttwhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/cloudwalk_tip_himself" >
+
+    </TextView>
+
+        <Button
+            android:id="@+id/bt_startdect"
+            android:layout_width="fill_parent"
+            android:layout_height="41.5dp"
+            style="@style/normalTextwhite"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="18.5dp"
+            android:layout_marginRight="18.5dp"
+           android:layout_centerInParent="true"
+            android:gravity="center"
+            android:background="@drawable/cloudwalk_red_btn_selector"
+            android:text="@string/cloudwalk_start_dect" />
+        
+    
+
+    </RelativeLayout>
+    
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.my.accountset.resetphone.ResetPhoneActivity">
+
+    <com.witaction.common.widget.HeaderView
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:Title="@string/change_phone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_14">
+
+        <com.witaction.common.widget.ClearEditTextView
+            android:id="@+id/et_new_phone"
+            style="@style/EditTextStyle"
+            android:hint="@string/please_input_new_phone"
+            android:inputType="phone" />
+
+        <View style="@style/h_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical">
+
+            <com.witaction.common.widget.ClearEditTextView
+                android:id="@+id/et_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/please_input_code"
+                android:inputType="number"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:textSize="@dimen/sp_20" />
+
+            <TextView
+                android:id="@+id/tv_get_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_code"
+                android:textColor="@color/green"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+        <View style="@style/h_line" />
+
+        <Button
+            android:id="@+id/btn_commit"
+            style="@style/ButtonStyle"
+            android:layout_marginTop="@dimen/dp_20"
+            android:enabled="false"
+            android:text="@string/commit" />
+    </LinearLayout>
+</LinearLayout>

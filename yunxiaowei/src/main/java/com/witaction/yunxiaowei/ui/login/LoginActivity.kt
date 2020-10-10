@@ -12,21 +12,18 @@ import com.witaction.common.extension.open
 import com.witaction.common.utils.CountDownUtil
 import com.witaction.common.utils.GlobalUtil
 import com.witaction.common.utils.toast
-import com.witaction.common.widget.HeaderView
 import com.witaction.plat.PlatLocalReponsitory
 import com.witaction.plat.ui.plat.PlatActivity
 import com.witaction.yunxiaowei.R
 import com.witaction.yunxiaowei.databinding.ActivityLoginBinding
 import com.witaction.yunxiaowei.framwork.AppConfig
-import com.witaction.yunxiaowei.framwork.LocalRepository
 import com.witaction.yunxiaowei.framwork.ServerRepository
 import com.witaction.yunxiaowei.ui.main.MainActivity
 
 /**
  * 登录页
  */
-class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
-    HeaderView.HeaderListener {
+class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>() {
     companion object {
         const val REQUEST_CODE = 0x110
         const val LOGIN_BY_ACCOUNT = 0
@@ -36,7 +33,7 @@ class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
     //倒计时
     private var countDownUtil: CountDownUtil? = null
 
-    override fun vmbinding(): Class<LoginViewModel> = LoginViewModel::class.java
+    override fun vmbinding() = LoginViewModel::class.java
 
     override fun viewbinding(): ActivityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
 
@@ -50,12 +47,8 @@ class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
             when (this) {
                 vb.tvUserAgreement -> {
                 }
-                vb.tvGetCode -> {
-                    countDown()
-                }
-                vb.btnLogin -> {
-                    login()
-                }
+                vb.tvGetCode -> countDown()
+                vb.btnLogin -> login()
             }
         }
         vb.etAccount.afterTextChanged {
@@ -78,38 +71,34 @@ class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
 
     override fun initData() {
         vm.plat.observe(this) {
-            it.let {
-                vb.headerView.setSubTitle(it.name)
-                if (it.modIPAddr.endsWith("/")) {
-                    ServerRepository.initApi("${AppConfig.APP_SCHEME}${it.modIPAddr}")
-                } else {
-                    ServerRepository.initApi("${AppConfig.APP_SCHEME}${it.modIPAddr}/")
-                }
+            vb.headerView.setSubTitle(it.name)
+            if (it.modIPAddr.endsWith("/")) {
+                ServerRepository.initApi("${AppConfig.APP_SCHEME}${it.modIPAddr}")
+            } else {
+                ServerRepository.initApi("${AppConfig.APP_SCHEME}${it.modIPAddr}/")
             }
         }
         vm.loginType.observe(this) {
-            it?.let {
-                when (it) {
-                    LOGIN_BY_ACCOUNT -> {
-                        vb.headerView.setRightText(GlobalUtil.getString(R.string.login_by_code))
-                        vb.llLoginByAccount.visible()
-                        vb.llLoginByCode.gone()
-                    }
-                    LOGIN_BY_CODE -> {
-                        vb.headerView.setRightText(GlobalUtil.getString(R.string.login_by_account))
-                        vb.llLoginByAccount.gone()
-                        vb.llLoginByCode.visible()
-                    }
+            when (it) {
+                LOGIN_BY_ACCOUNT -> {
+                    vb.headerView.setRightText(GlobalUtil.getString(R.string.login_by_code))
+                    vb.llLoginByAccount.visible()
+                    vb.llLoginByCode.gone()
                 }
-                vb.etAccount.setText("")
-                vb.etPwd.setText("")
-                vb.etPhone.setText("")
-                vb.etCode.setText("")
-                countDownUtil?.cancel()
-                vb.tvGetCode.setTextColor(GlobalUtil.getColor(R.color.green))
-                vb.tvGetCode.isEnabled = true
-                vb.tvGetCode.text = GlobalUtil.getString(R.string.get_code)
+                LOGIN_BY_CODE -> {
+                    vb.headerView.setRightText(GlobalUtil.getString(R.string.login_by_account))
+                    vb.llLoginByAccount.gone()
+                    vb.llLoginByCode.visible()
+                }
             }
+            vb.etAccount.setText("")
+            vb.etPwd.setText("")
+            vb.etPhone.setText("")
+            vb.etCode.setText("")
+            countDownUtil?.cancel()
+            vb.tvGetCode.setTextColor(GlobalUtil.getColor(R.color.green))
+            vb.tvGetCode.isEnabled = true
+            vb.tvGetCode.text = GlobalUtil.getString(R.string.get_code)
         }
         vm.phoneValidateResult.observe(this) {
             hideLoading()
@@ -126,12 +115,8 @@ class LoginActivity : BVMActivity<ActivityLoginBinding, LoginViewModel>(),
         vm.user.observe(this) {
             hideLoading()
             if (it.isSuccess()) {
-                val user = it.getSimpleData()
-                user?.let { it1 ->
-                    LocalRepository.saveLoginResult(it1)
-                    open<MainActivity>()
-                    finish()
-                }
+                open<MainActivity>()
+                finish()
             } else {
                 toast(it.msg)
             }

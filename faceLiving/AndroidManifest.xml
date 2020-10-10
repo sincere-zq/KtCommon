@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.cloudwalk.libproject"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application>
+        <activity
+            android:name=".LiveStartActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            tools:targetApi="honeycomb" />
+        <activity
+            android:name=".LiveServerActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            tools:targetApi="honeycomb" />
+        <activity
+            android:name=".LiveResultActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            tools:targetApi="honeycomb" />
+        <activity
+            android:name=".LiveActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            tools:targetApi="honeycomb" />
+        <activity
+            android:name=".BestFaceActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            tools:targetApi="honeycomb" />
+        <activity
+            android:name=".TemplatedActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            tools:targetApi="honeycomb" />
+    </application>
+
+</manifest>

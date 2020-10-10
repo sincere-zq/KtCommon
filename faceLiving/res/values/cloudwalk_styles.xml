@@ -1,0 +1,40 @@
+<resources>
+
+
+  <!-- 文字 -->
+  <style name="bigText">
+    <item name="android:textSize">@dimen/BiggerTextSize</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="middleText">
+    <item name="android:textSize">@dimen/MiddleTextSize</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="normalText">
+    <item name="android:textSize">@dimen/NormalTextSize</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="smallText">
+    <item name="android:textSize">@dimen/SmallTextSize</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="bigTextwhite" parent="bigText">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="middleTextwhite" parent="middleText">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="normalTextwhite" parent="normalText">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+  <style name="smallTexttwhite" parent="smallText">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+ 
+</resources>

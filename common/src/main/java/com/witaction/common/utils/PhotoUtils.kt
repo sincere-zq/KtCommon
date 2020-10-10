@@ -14,6 +14,7 @@ import androidx.core.net.toFile
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import com.witaction.common.utils.UriTofilePath.getPath
 import java.io.File
 import kotlin.random.Random
 
@@ -23,6 +24,16 @@ import kotlin.random.Random
 class PhotoUtils {
 
     companion object {
+        @Throws(Exception::class)
+        fun getBitmapBase64FromUri(uri: Uri, context: Activity): String? {
+            val bitmap = BitmapUtils.getBitmapFormUri(context, uri)
+            val finalBitmap = BitmapUtils.rotateBitmapByDegree(
+                bitmap, BitmapUtils.getBitmapDegree(
+                    getPath(context, uri)
+                )
+            )
+            return FileEncoder.encodeBase64Bitmap(finalBitmap)
+        }
 
         private val authorities = "${GlobalUtil.appPackage}.provider"
         /**
@@ -316,7 +327,9 @@ class PhotoUtils {
 
 
     }
+
 }
+
 
 private fun getPhotoFragment(manager: FragmentManager) =
     manager.findFragmentByTag("photoFragmen") as? PhotoUtils.PhotoFragment
