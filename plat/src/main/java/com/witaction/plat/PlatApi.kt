@@ -17,5 +17,5 @@ interface PlatApi {
     fun getCityList(): Call<BaseResp<List<City>>>
 
     @POST(URL_LIST_APP_SERVER)
-    fun getPlatList(@Body params: String): Call<BaseResp<List<Plat>>>
+    fun getPlatList(@Body params: MutableMap<String,Any>): Call<BaseResp<List<Plat>>>
 }

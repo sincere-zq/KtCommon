@@ -15,9 +15,10 @@ object PlatRepository {
      */
     suspend fun getPlatList(params: MutableMap<String, Any>) =
         loginApi.getPlatList(
-            getParams(
-                params
-            )
+//            getParams(
+//                params
+//            )
+            params
         ).await()
 
     private fun getParams(params: MutableMap<String, Any>): String {

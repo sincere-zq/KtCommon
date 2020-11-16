@@ -93,8 +93,7 @@ abstract class BActivity<VB : ViewBinding> : AppCompatActivity(), IActivity<VB>,
     }
 
     protected fun getLoadingView(): View {
-        val view = LayoutInflater.from(this).inflate(R.layout.view_layout_loading, null)
-        return view
+        return LayoutInflater.from(this).inflate(R.layout.view_layout_loading, null)
     }
 
     protected fun getNetErrorView(reload: () -> Unit): View {

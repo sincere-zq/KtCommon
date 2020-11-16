@@ -1,6 +1,8 @@
 package com.witaction.plat
 
+import android.text.TextUtils
 import android.util.Base64
+import com.google.gson.JsonParser
 import com.witaction.common.NetConfig
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
@@ -79,6 +81,17 @@ class PlatServiceCreator private constructor() {
                 val body = request.body()
                 var bodyString = bodyToString(body)
 //                bodyString = bodyString + "&sn=" + LoginNetConfig.BASE_URL_RELEASE_APPSN
+                if (!TextUtils.isEmpty(bodyString)) {
+                    val jsonParser = JsonParser()
+                    val json = jsonParser.parse(bodyString).asJsonObject
+                    var s = "";
+                    json.keySet().forEach {
+                        s += it + "=" + json[it].asString + "&"
+                    }
+                    if (!TextUtils.isEmpty(s)) {
+                        bodyString = s.substring(0, s.length - 1)
+                    }
+                }
                 bodyString = "$bodyString&sn=${NetConfig.BASE_URL_RELEASE_APPSN}"
                 try {
                     val time: String =

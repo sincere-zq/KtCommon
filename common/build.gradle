@@ -62,9 +62,9 @@ dependencies {
     //material 库
     api google.material
     //协程
-    api jetbrains.ktStdlib
-    api jetbrains.ktReflect
-    api jetbrains.ktCoroutineAndroid
+//    api jetbrains.ktStdlib
+//    api jetbrains.ktReflect
+//    api jetbrains.ktCoroutineAndroid
     //网络框架
     api squareup.retrofit
     api squareup.converterGson
@@ -99,5 +99,5 @@ dependencies {
 
     api immersionbar
 
-    api project(path: ':videocompressor')
+//    api project(path: ':videocompressor')
 }
